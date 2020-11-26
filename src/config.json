@@ -1,0 +1,6 @@
+{
+  "game": {
+    "boardHeight": 360,
+    "boardPadding": 10
+  }
+}
