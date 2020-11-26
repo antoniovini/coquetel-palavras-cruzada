@@ -1,13 +1,14 @@
-import React from 'react';
+import React from "react";
 
-import * as S from './styles';
+import * as S from "./styles";
 
-function Timer({time="00:00:00"}) {
+function Timer({time, children}) {
   return (
     <S.Container>
       <img src={"/assets/clock.png"} />
-      <div>
+      <div className="content">
         <h3>{time}</h3>
+        {children}
       </div>
     </S.Container>
   );

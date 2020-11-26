@@ -25,6 +25,8 @@ export const Cell = styled.div`
   width: ${({yCount}) => ((config.game.boardHeight - (config.game.boardPadding * 2)) / yCount)}px;
   height: ${({yCount}) => (config.game.boardHeight - (config.game.boardPadding * 2)) / yCount}px;
   
+  transition: background-color .2s;
+
   ${({tips, selected}) => tips ? css`
     background-color: #213b55;
   ` : selected ? css`
@@ -39,6 +41,8 @@ export const Cell = styled.div`
     justify-content: center;
     align-items: center;
     color: white;
+
+    cursor: pointer;
 
     font-weight: bold;
   }

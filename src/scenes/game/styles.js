@@ -26,6 +26,14 @@ export const Box = styled.div`
     border-radius: 20px 20px 0 0;
 
     display: flex;
+
+    .startstop{
+      cursor: pointer;
+
+      :hover{
+        opacity: 0.8;
+      }
+    }
   }
 
   .board-box{

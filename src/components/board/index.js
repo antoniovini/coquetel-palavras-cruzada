@@ -19,8 +19,22 @@ function Board({ data, onSelect, selectedWord }) {
                 key={index}
                 yCount={data.length}
                 tips={cell.tips}
-                onClick={() => onSelect(cell.word)}
-                selected={selectedWord && selectedWord === cell.word}
+                onClick={() => {
+                  if(cell.tips){
+                    if(selectedWord){
+                      const nextTip = cell.tips.filter((tip) => tip !== selectedWord);
+                      console.log(nextTip);
+                      if(nextTip.length > 0){
+                        onSelect(nextTip[0]);
+                      }
+                    }else{
+                      onSelect(cell.tips[0]);
+                    }
+                  }else{
+                    onSelect(cell.word)
+                  }
+                }}
+                selected={selectedWord && Array.isArray(cell.word) ? cell.word.find(item => item === selectedWord) : selectedWord === cell.word}
               >
                 { cell.tips ? cell.tips.map((tip) => (
                   <div className="tip">{tip}</div>
