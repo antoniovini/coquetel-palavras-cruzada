@@ -31,7 +31,15 @@ function Board({ data, onSelect, selectedWord }) {
                       onSelect(cell.tips[0]);
                     }
                   }else{
-                    onSelect(cell.word)
+                    
+                    if(Array.isArray(cell.word)){
+                      const currentExists = cell.word.find(item => item === selectedWord);
+                      if(!currentExists){
+                        onSelect(cell.word[0]);
+                      }
+                    }else{
+                      onSelect(cell.word)
+                    }
                   }
                 }}
                 selected={selectedWord && Array.isArray(cell.word) ? cell.word.find(item => item === selectedWord) : selectedWord === cell.word}

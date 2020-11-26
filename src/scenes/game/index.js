@@ -38,8 +38,8 @@ const initialBoard = {
     [{ word: 1, }, { word: [1, 3], }, { word: [2, 1], }, { word: 1, }, { word: [1, 4], }, { word: 1, }, { word: [1, 5], }, { word: [1, 6], }, { word: [1, 7], }],
     [{ tips: [8] }, { word: 3 }, { word: 2 }, { tips: [9] }, { word: 4 }, { tips: [10, 11] }, { word: [5, 10] }, { word: [6, 10] }, { word: [7, 10] },],
     [{ word: 8 }, { word: [3, 8] }, { word: [2, 8] }, { word: [8, 9] }, { word: [4, 8,] }, { word: [8, 11] }, { tips: [12] }, { word: 6 }, { word: 7 },],
-    [{tips: [13, 14] }, { word: [13, 3] }, { word: [13, 2] }, { word: [13, 9] }, { word: [13, 4] }, { word: [13, 11] }, { word: [13, 12] }, { word: [13, 6] }, { word: [13, 7] },],
-    [{word: 14}, { word: [14, 3] }, { word: [14, 2] }, {tips: [15]}, { word: [15, 4] }, { word: [15, 11] }, { word: [15, 12]}, { word: [15, 6] }, { word: [15, 7] },],
+    [{ tips: [13, 14] }, { word: [13, 3] }, { word: [13, 2] }, { word: [13, 9] }, { word: [13, 4] }, { word: [13, 11] }, { word: [13, 12] }, { word: [13, 6] }, { word: [13, 7] },],
+    [{ word: 14 }, { word: [14, 3] }, { word: [14, 2] }, { tips: [15] }, { word: [15, 4] }, { word: [15, 11] }, { word: [15, 12] }, { word: [15, 6] }, { word: [15, 7] },],
   ],
   tips: [
     { word: 1, value: "Objeto de escrita que é recarregável" },
@@ -119,12 +119,12 @@ function Game() {
                 className="startstop"
               />
             ) : (
-              <MdPlayArrow
-                size={30}
-                onClick={() => start()}
-                className="startstop"
-              />
-            )}
+                <MdPlayArrow
+                  size={30}
+                  onClick={() => start()}
+                  className="startstop"
+                />
+              )}
           </Timer>
           <Button
           >
