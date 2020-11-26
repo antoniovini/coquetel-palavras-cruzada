@@ -4,7 +4,7 @@ import * as S from './styles';
 
 function Board({ data, onSelect, selectedWord }) {
 
-  useEffect(() => { console.log(selectedWord)}, [selectedWord]);
+  useEffect(() => { }, [selectedWord]);
 
   return (
     <S.Container
@@ -23,7 +23,7 @@ function Board({ data, onSelect, selectedWord }) {
                   if(cell.tips){
                     if(selectedWord){
                       const nextTip = cell.tips.filter((tip) => tip !== selectedWord);
-                      console.log(nextTip);
+                    
                       if(nextTip.length > 0){
                         onSelect(nextTip[0]);
                       }
