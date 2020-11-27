@@ -8,6 +8,7 @@ import DefaultLayout from "../../layouts/default";
 import { MdPause, MdPlayArrow } from "react-icons/md";
 
 import * as S from "./styles";
+import { checkWord, fillLetter, fillWord, getNotCorrect, getWord, getWordFromBoard } from "../../utils/board";
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -18,20 +19,20 @@ const initialBoard = {
   y: 6,
   words: [
     { word: 1, text: "lapiseira", y: "2", x: "1-9", horizontal: true },
-    { word: 2, text: "aparar", y: "3", x: "1-6", horizontal: true },
+    { word: 2, text: "aparar", y: "1-6", x: "3", vertical: true },
     { word: 3, text: "adubo", y: "2-6", x: "2", vertical: true },
-    { word: 4, text: "astral", y: "1-6", x: "4", vertical: true },
+    { word: 4, text: "astral", y: "1-6", x: "5", vertical: true },
     { word: 5, text: "bis", y: "1-3", x: "7", vertical: true },
     { word: 6, text: "rondar", y: "2-6", x: "8", vertical: true },
     { word: 7, text: "cantar", y: "1-6", x: "9", vertical: true },
-    { word: 8, text: "aurora", y: "3", x: "1-6", horizontal: true },
-    { word: 9, text: "od", y: "3-5", x: "4", vertical: true },
+    { word: 8, text: "aurora", y: "4", x: "1-6", horizontal: true },
+    { word: 9, text: "od", y: "4-5", x: "4", vertical: true },
     { word: 10, text: "son", y: "3", x: "7-9", horizontal: true },
     { word: 11, text: "ala", y: "4-6", x: "6", vertical: true },
     { word: 12, text: "av", y: "5-6", x: "7", vertical: true },
-    { word: 13, text: "badalada", y: "6", x: "2-9", horizontal: true },
+    { word: 13, text: "badalada", y: "5", x: "2-9", horizontal: true },
     { word: 14, text: "cor", y: "6", x: "1-3", horizontal: true },
-    { word: 15, text: "lavar", y: "6", x: "4-9", horizontal: true },
+    { word: 15, text: "lavar", y: "6", x: "5-9", horizontal: true },
   ],
   data: [
     [{ tips: [1] }, { tips: [2, 3] }, { word: 2, arrow: { icon: "left-to-bottom", x: '0', y: '6px' } }, { tips: [4] }, { word: 4, arrow: { icon: "left-to-bottom", x: '0', y: '6px' } }, { tips: [5] }, { word: 5, arrow: { icon: "left-to-bottom", x: '0', y: '6px' } }, { tips: [7, 6] }, { word: 7, arrow: { icon: "left-to-bottom", x: '0', y: '6px' } },],
@@ -111,6 +112,35 @@ function Game() {
     setBoard(board);
   }
 
+  const onCorrect = () => {
+    setBoard(fillWord(board, selectedWord));
+    setSelectedWord(word => word + 1);
+  }
+
+  const onSolution = () => {
+    const words = board.words;
+    words.map((word) => {
+      const copy = {...fillWord(board, word.word)};
+      setBoard(copy);
+    });
+  }
+
+  const onCheck = () => {
+    const typedWord = getWordFromBoard(board.data, selectedWord);
+    setBoard(checkWord(board, selectedWord, typedWord));
+  }
+
+  const onTip = () => {
+    setBoard(fillLetter(board, selectedWord));
+
+    // const copy = board.data;
+
+    // copy[random.y][random.x].correct = true;
+    // copy[random.y][random.x].value = random.value;
+
+    // setBoard(board => ({...board, data: copy}))
+  }
+
   return (
     <S.Container>
       <S.Box>
@@ -130,10 +160,18 @@ function Game() {
                 />
               )}
           </Timer>
-          <Button>Corrigir</Button>
-          <Button>Checar</Button>
-          <Button>Dica</Button>
-          <Button>Solução</Button>
+          <Button
+            onClick={onCorrect}
+          >Corrigir</Button>
+          <Button
+            onClick={onCheck}
+          >Checar</Button>
+          <Button
+            onClick={onTip}
+          >Dica</Button>
+          <Button
+            onClick={onSolution}
+          >Solução</Button>
           <Button flat>
             <Link to="/difficulty">
               <img src={"/assets/icons/back.png"} height={"20px"} />

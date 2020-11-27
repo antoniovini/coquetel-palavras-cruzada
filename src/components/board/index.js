@@ -76,6 +76,8 @@ function Board({ game, onSelect, onUpdate, selectedWord }) {
                   }
                 }}
                 selected={selectedWord && Array.isArray(cell.word) ? cell.word.find(item => item === selectedWord) : selectedWord === cell.word}
+                correct={cell.correct}
+                failed={cell.failed}
               >
                 { cell.tips ? cell.tips.map((tip) => (
                   <div className="tip">{tip}</div>
@@ -91,7 +93,11 @@ function Board({ game, onSelect, onUpdate, selectedWord }) {
                       )}
                       <input 
                         maxLength="1" 
-                        onKeyDown={(evt) => deleteValue(evt, columnIndex, rowIndex)}
+                        onKeyDown={(evt) => {
+                          if(!cell.correct){
+                            deleteValue(evt, columnIndex, rowIndex)
+                          }
+                        }}
                         // onChange={(evt) => fillValue(evt, columnIndex, rowIndex)}
                         value={game.data[rowIndex][columnIndex].value || ''}
                         ref={ref => {
