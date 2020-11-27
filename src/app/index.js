@@ -1,16 +1,12 @@
-import React from 'react';
+import React from "react";
 import GlobalStyle from "../styles/global";
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import MainMenu from '../scenes/main';
-import DifficultyMenu from '../scenes/difficulty';
-import Game from '../scenes/game';
+import MainMenu from "../scenes/main";
+import DifficultyMenu from "../scenes/difficulty";
+import Game from "../scenes/game";
+import Tutorial from "../scenes/tutorial";
 
 function App() {
   return (
@@ -18,6 +14,9 @@ function App() {
       <GlobalStyle />
       <Router>
         <Switch>
+          <Route path="/tutorial">
+            <Tutorial />
+          </Route>
           <Route path="/difficulty">
             <DifficultyMenu />
           </Route>
