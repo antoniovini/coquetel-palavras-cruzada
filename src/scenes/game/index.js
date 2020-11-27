@@ -17,98 +17,29 @@ const initialBoard = {
   x: 9,
   y: 6,
   words: [
-    { word: 1, text: "lapiseira", y: "2", x: "1-9" },
-    { word: 2, text: "aparar", y: "3", x: "1-6" },
-    { word: 3, text: "adubo", y: "2-6", x: "2" },
-    { word: 4, text: "astral", y: "1-6", x: "4" },
-    { word: 5, text: "bis", y: "1-3", x: "7" },
-    { word: 6, text: "rondar", y: "2-6", x: "8" },
-    { word: 7, text: "cantar", y: "1-6", x: "9" },
-    { word: 8, text: "aurora", y: "3", x: "1-6" },
-    { word: 9, text: "od", y: "3-5", x: "4" },
-    { word: 10, text: "son", y: "3", x: "7-9" },
-    { word: 11, text: "ala", y: "4-6", x: "6" },
-    { word: 12, text: "av", y: "5-6", x: "7" },
-    { word: 13, text: "badalada", y: "6", x: "2-9" },
-    { word: 14, text: "cor", y: "6", x: "1-3" },
-    { word: 15, text: "lavar", y: "6", x: "4-9" },
+    { word: 1, text: "lapiseira", y: "2", x: "1-9", horizontal: true },
+    { word: 2, text: "aparar", y: "3", x: "1-6", horizontal: true },
+    { word: 3, text: "adubo", y: "2-6", x: "2", vertical: true },
+    { word: 4, text: "astral", y: "1-6", x: "4", vertical: true },
+    { word: 5, text: "bis", y: "1-3", x: "7", vertical: true },
+    { word: 6, text: "rondar", y: "2-6", x: "8", vertical: true },
+    { word: 7, text: "cantar", y: "1-6", x: "9", vertical: true },
+    { word: 8, text: "aurora", y: "3", x: "1-6", horizontal: true },
+    { word: 9, text: "od", y: "3-5", x: "4", vertical: true },
+    { word: 10, text: "son", y: "3", x: "7-9", horizontal: true },
+    { word: 11, text: "ala", y: "4-6", x: "6", vertical: true },
+    { word: 12, text: "av", y: "5-6", x: "7", vertical: true },
+    { word: 13, text: "badalada", y: "6", x: "2-9", horizontal: true },
+    { word: 14, text: "cor", y: "6", x: "1-3", horizontal: true },
+    { word: 15, text: "lavar", y: "6", x: "4-9", horizontal: true },
   ],
   data: [
-<<<<<<< HEAD
-    [{ tips: [1] }, { tips: [2, 3] }, { word: 2 }, { tips: [4] }, { word: 4 }, { tips: [5] }, { word: 5 }, { tips: [6, 7] }, { word: 7 },],
-    [{ word: 1, }, { word: [1, 3], }, { word: [2, 1], }, { word: 1, }, { word: [1, 4], }, { word: 1, }, { word: [1, 5], }, { word: [1, 6], }, { word: [1, 7], }],
-    [{ tips: [8] }, { word: 3 }, { word: 2 }, { tips: [9] }, { word: 4 }, { tips: [10, 11] }, { word: [5, 10] }, { word: [6, 10] }, { word: [7, 10] },],
-    [{ word: 8 }, { word: [3, 8] }, { word: [2, 8] }, { word: [8, 9] }, { word: [4, 8,] }, { word: [8, 11] }, { tips: [12] }, { word: 6 }, { word: 7 },],
-    [{ tips: [13, 14] }, { word: [13, 3] }, { word: [13, 2] }, { word: [13, 9] }, { word: [13, 4] }, { word: [13, 11] }, { word: [13, 12] }, { word: [13, 6] }, { word: [13, 7] },],
-    [{ word: 14 }, { word: [14, 3] }, { word: [14, 2] }, { tips: [15] }, { word: [15, 4] }, { word: [15, 11] }, { word: [15, 12] }, { word: [15, 6] }, { word: [15, 7] },],
-=======
-    [
-      { tips: [1] },
-      { tips: [2, 3] },
-      { word: 2 },
-      { tips: [4] },
-      { word: 4 },
-      { tips: [5] },
-      { word: 5 },
-      { tips: [6, 7] },
-      { word: 7 },
-    ],
-    [
-      { word: 1 },
-      { word: [1, 3] },
-      { word: [2, 1] },
-      { word: 1 },
-      { word: [1, 4] },
-      { word: 1 },
-      { word: [1, 5] },
-      { word: [1, 6] },
-      { word: [1, 7] },
-    ],
-    [
-      { tips: [8] },
-      { word: 3 },
-      { word: 2 },
-      { tips: [9] },
-      { word: 4 },
-      { tips: [10, 11] },
-      { word: [5, 10] },
-      { word: [6, 10] },
-      { word: [7, 10] },
-    ],
-    [
-      { word: 8 },
-      { word: [3, 8] },
-      { word: [2, 8] },
-      { word: [8, 9] },
-      { word: [4, 8] },
-      { word: [8, 11] },
-      { tips: [12] },
-      { word: 6 },
-      { word: 7 },
-    ],
-    [
-      { tips: [13, 14] },
-      { word: [13, 3] },
-      { word: [13, 2] },
-      { word: [13, 9] },
-      { word: [13, 4] },
-      { word: [13, 11] },
-      { word: [13, 12] },
-      { word: [13, 6] },
-      { word: [13, 7] },
-    ],
-    [
-      { word: 14 },
-      { word: [14, 3] },
-      { word: [14, 2] },
-      { tips: [15] },
-      { word: [15, 4] },
-      { word: [15, 11] },
-      { word: [15, 12] },
-      { word: [15, 6] },
-      { word: [15, 7] },
-    ],
->>>>>>> 5dc84652e5911748dc92c3e8ef368af9b921707a
+    [{ tips: [1] }, { tips: [2, 3] }, { word: 2, arrow: { icon: "left-to-bottom", x: '0', y: '6px' } }, { tips: [4] }, { word: 4, arrow: { icon: "left-to-bottom", x: '0', y: '6px' } }, { tips: [5] }, { word: 5, arrow: { icon: "left-to-bottom", x: '0', y: '6px' } }, { tips: [7, 6] }, { word: 7, arrow: { icon: "left-to-bottom", x: '0', y: '6px' } },],
+    [{ word: 1, arrow: { icon: "top-to-right", x: '6px', y: '0' } }, { word: [1, 3], arrow: { icon: "to-bottom", x: 'calc(50% - 5px)', y: '0', size: 10 } }, { word: [2, 1], }, { word: 1, }, { word: [1, 4], }, { word: 1, }, { word: [1, 5], }, { word: [1, 6], arrow: { icon: "to-bottom", x: 'calc(50% - 5px)', y: '0', size: 10 } }, { word: [1, 7], }],
+    [{ tips: [8] }, { word: 3 }, { word: 2 }, { tips: [9] }, { word: 4 }, { tips: [10, 11] }, { word: [5, 10], arrow: { icon: "to-right", x: '0', y: 'calc(50% - 7px)', size: 14 } }, { word: [6, 10] }, { word: [7, 10] },],
+    [{ word: 8, arrow: { icon: "top-to-right", x: '6px', y: '0' } }, { word: [3, 8] }, { word: [2, 8] }, { word: [8, 9], arrow: { icon: "to-bottom", x: 'calc(50% - 5px)', y: '0', size: 10 } }, { word: [4, 8,] }, { word: [8, 11], arrow: { icon: "to-bottom", x: 'calc(50% - 5px)', y: '0', size: 10 } }, { tips: [12] }, { word: 6 }, { word: 7 },],
+    [{ tips: [13, 14] }, { word: [13, 3], arrow: { icon: "to-right", x: '0', y: 'calc(50% - 7px)', size: 14 } }, { word: [13, 2] }, { word: [13, 9] }, { word: [13, 4] }, { word: [13, 11] }, { word: [13, 12], arrow: { icon: "to-bottom", x: 'calc(50% - 5px)', y: '0', size: 10 } }, { word: [13, 6] }, { word: [13, 7] },],
+    [{ word: 14, arrow: { icon: "top-to-right", x: '6px', y: '0' } }, { word: [14, 3] }, { word: [14, 2] }, { tips: [15] }, { word: [15, 4], arrow: { icon: "to-right", x: '0', y: 'calc(50% - 7px)', size: 14 } }, { word: [15, 11] }, { word: [15, 12] }, { word: [15, 6] }, { word: [15, 7] },],
   ],
   tips: [
     { word: 1, value: "Objeto de escrita que é recarregável" },
@@ -176,6 +107,10 @@ function Game() {
     setStop(false);
   };
 
+  const onUpdate = (board) => {
+    setBoard(board);
+  }
+
   return (
     <S.Container>
       <S.Box>
@@ -207,9 +142,10 @@ function Game() {
         </div>
         <div className="board-box">
           <Board
-            data={board.data}
+            game={board}
             onSelect={(word) => setSelectedWord(word)}
             selectedWord={selectedWord}
+            onUpdate={onUpdate}
           />
         </div>
         <div className="tip-box">
@@ -217,7 +153,6 @@ function Game() {
             flat
             type="button"
             onClick={() => {
-              console.log(selectedWord);
               if (selectedWord === 1) {
                 setSelectedWord(initialBoard.words.length);
               } else {

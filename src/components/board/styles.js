@@ -16,6 +16,7 @@ export const Row = styled.div`
 `;
 
 export const Cell = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -78,4 +79,13 @@ export const Cell = styled.div`
   input:focus{
     border: 4px solid #EBC947;
   }
+`;
+
+export const Arrow = styled.img`
+  position: absolute;
+  max-height: 60%;
+  max-width: 60%;
+  width: ${({size}) => size}px;
+  top: ${({y}) => y};
+  left: ${({x}) => x};
 `;
