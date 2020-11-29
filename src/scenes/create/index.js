@@ -183,40 +183,43 @@ function Create() {
       if(Array.isArray(coordinates.x)){
         if(doubles){
           for(let z = 0; z < doubles.length; z++){
-            const double = doubles[z];
+            const double = doubles[z] - 1;
             boardCopy[coordinates.y][double] = { ...boardCopy[coordinates.y][double], double: true };
           }
         }
 
         for(let x = coordinates.x[0]; x <= coordinates.x[1]; x++){
           if(boardCopy[coordinates.y][x].word){
-            boardCopy[coordinates.y][x] = { word: [...boardCopy[coordinates.y][x].word, word.word] };
+            boardCopy[coordinates.y][x] = { ...boardCopy[coordinates.y][x], word: [...boardCopy[coordinates.y][x].word, word.word] };
           }else{
-            boardCopy[coordinates.y][x] = { word: [word.word] };
+            boardCopy[coordinates.y][x] = { ...boardCopy[coordinates.y][x], word: [word.word] };
           }
         }
       }else if (Array.isArray(coordinates.y)){
         if(doubles){
           for(let z = 0; z < doubles.length; z++){
-            const double = doubles[z];
+            const double = doubles[z] - 1;
             boardCopy[double][coordinates.x] = { ...boardCopy[double][coordinates.x], double: true };
-            console.log(boardCopy[double][coordinates.y]);
           }
         }
 
         for(let y = coordinates.y[0]; y <= coordinates.y[1]; y++){
           if(boardCopy[y][coordinates.x].word){
-            boardCopy[y][coordinates.x] = { word: [...boardCopy[y][coordinates.x].word, word.word] };
+            boardCopy[y][coordinates.x] = { ...boardCopy[y][coordinates.x], word: [...boardCopy[y][coordinates.x].word, word.word] };
           }else{
-            boardCopy[y][coordinates.x] = { word: [word.word] };
+            boardCopy[y][coordinates.x] = { ...boardCopy[y][coordinates.x], word: [word.word] };
           }
         }
       }else{
 
+        if(doubles){
+          boardCopy[coordinates.y][coordinates.x] = { doubles: true };
+        }
+
         if(boardCopy[coordinates.y][coordinates.x].word){
-          boardCopy[coordinates.y][coordinates.x] = { word: [...boardCopy[coordinates.y][coordinates.x].word, word.word]};
+          boardCopy[coordinates.y][coordinates.x] = { ...boardCopy[coordinates.y][coordinates.x], word: [...boardCopy[coordinates.y][coordinates.x].word, word.word]};
         }else{
-          boardCopy[coordinates.y][coordinates.x] = { word: [word.word]};
+          boardCopy[coordinates.y][coordinates.x] = { ...boardCopy[coordinates.y][coordinates.x], word: [word.word]};
         }
       }
 
