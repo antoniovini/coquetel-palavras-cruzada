@@ -6,19 +6,19 @@ import * as S from './styles';
 function Board({ game, onSelect, onUpdate, selectedWord }) {
   const [focus, setFocus] = useState({});
 
-  const deleteValue = (evt, x, y) => {
+  const updateValue = (evt, x, y, z) => {
     if(evt.key === "Backspace"){
       setTimeout(() => {
-        const back = backCell(game, x, y, selectedWord);
-        onUpdate(fillCell(game, "", x, y));
+        const back = backCell(game, x, y, z, selectedWord);
+        onUpdate(fillCell(game, "", x, y, z));
         if(back){
           setFocus(back);
         }
       }, 200);
     }else{
       if(evt.key.length === 1){
-        onUpdate(fillCell(game, evt.key, x, y));
-        const next = nextCell(game, x, y, selectedWord);
+        onUpdate(fillCell(game, evt.key, x, y, z));
+        const next = nextCell(game, x, y, z, selectedWord);
         if(next){
           setFocus(next);
         }
@@ -91,25 +91,85 @@ function Board({ game, onSelect, onUpdate, selectedWord }) {
                           src={`/assets/arrows/${cell.arrow.icon}.png`} 
                         />
                       )}
-                      <input 
-                        maxLength="1" 
-                        onKeyDown={(evt) => {
-                          if(!cell.correct){
-                            deleteValue(evt, columnIndex, rowIndex)
-                          }
-                        }}
-                        // onChange={(evt) => fillValue(evt, columnIndex, rowIndex)}
-                        value={game.data[rowIndex][columnIndex].value || ''}
-                        ref={ref => {
-                          if(!focus){
-                            return
-                          }
+                      { cell.double ? (
+                        <S.Double className="double">
+                          <svg className="line-blue" style={{width: '100%', height: '100%'}}>
+                              <line  x1="0" y1="100%" x2="100%" y2="0" />
+                          </svg>
+                          <svg className="line-yellow" style={{width: '100%', height: '100%'}}>
+                              <line  x1="0" y1="100%" x2="100%" y2="0" />
+                          </svg>
+                          <div className="top">
+                            <input 
+                              maxLength="1"
+                              onKeyDown={(evt) => {
+                                if(Array.isArray(cell.correct)){
+                                  if(!cell.correct[0]){
+                                    updateValue(evt, columnIndex, rowIndex, 0);
+                                  }
+                                }else{
+                                  updateValue(evt, columnIndex, rowIndex, 0);
+                                }
+                              }}
+                              value={game.data[rowIndex][columnIndex].value ? game.data[rowIndex][columnIndex].value[0] || '' : ''}
+                              ref={ref => {
+                                if(!focus){
+                                  return
+                                }
+    
+                                if(focus.x === columnIndex  && focus.y === rowIndex && focus.z === 0 && ref) {
+                                  ref.focus();
+                                }
+                              }}
+                            />
+                          </div>
+                          <div className="bottom">
+                            <input 
+                              maxLength="1"
+                              onKeyDown={(evt) => {
+                                if(Array.isArray(cell.correct)){
+                                  if(!cell.correct[1]){
+                                    updateValue(evt, columnIndex, rowIndex, 1);
+                                  }
+                                }else{
+                                  updateValue(evt, columnIndex, rowIndex, 1);
+                                }
+                              }}
+                              value={game.data[rowIndex][columnIndex].value ? game.data[rowIndex][columnIndex].value[1] || '' : ''}
+                              ref={ref => {
+                                if(!focus){
+                                  return
+                                }
+    
+                                if(focus.x === columnIndex  && focus.y === rowIndex && focus.z === 1 && ref) {
+                                  ref.focus();
+                                }
+                              }}
+                            />
+                          </div>
+                        </S.Double>
+                      ) : (
+                        <input
+                          className="single-input" 
+                          maxLength="1" 
+                          onKeyDown={(evt) => {
+                            if(!cell.correct){
+                              updateValue(evt, columnIndex, rowIndex)
+                            }
+                          }}
+                          // onChange={(evt) => fillValue(evt, columnIndex, rowIndex)}
+                          value={game.data[rowIndex][columnIndex].value || ''}
+                          ref={ref => {
+                            if(!focus){
+                              return
+                            }
 
-                          if(focus.x === columnIndex  && focus.y === rowIndex && ref) {
-                            ref.focus();
-                          }
-                        }}
-                      />
+                            if(focus.x === columnIndex  && focus.y === rowIndex && ref) {
+                              ref.focus();
+                            }
+                          }}
+                        />
+                      )}
                     </>
                   )}
               </S.Cell>

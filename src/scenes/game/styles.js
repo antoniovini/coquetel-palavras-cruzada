@@ -44,11 +44,14 @@ export const Box = styled.div`
 
   .tip-box{
     display: flex;
+    min-height: 30px;
     align-items: center;
     width: 100%;
     background-color: #EBC947;
 
     border-radius: 0 0 20px 20px;
+
+    transition: height .2s;
 
     h2{
       flex: 1;

@@ -8,63 +8,18 @@ import DefaultLayout from "../../layouts/default";
 import { MdPause, MdPlayArrow } from "react-icons/md";
 
 import * as S from "./styles";
-import { checkWord, fillLetter, fillWord, getNotCorrect, getWord, getWordFromBoard } from "../../utils/board";
+import { checkWord, fillLetter, fillWord, getWordFromBoard } from "../../utils/board";
+
+import games from '../../games';
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
 
-const initialBoard = {
-  x: 9,
-  y: 6,
-  words: [
-    { word: 1, text: "lapiseira", y: "2", x: "1-9", horizontal: true },
-    { word: 2, text: "aparar", y: "1-6", x: "3", vertical: true },
-    { word: 3, text: "adubo", y: "2-6", x: "2", vertical: true },
-    { word: 4, text: "astral", y: "1-6", x: "5", vertical: true },
-    { word: 5, text: "bis", y: "1-3", x: "7", vertical: true },
-    { word: 6, text: "rondar", y: "2-6", x: "8", vertical: true },
-    { word: 7, text: "cantar", y: "1-6", x: "9", vertical: true },
-    { word: 8, text: "aurora", y: "4", x: "1-6", horizontal: true },
-    { word: 9, text: "od", y: "4-5", x: "4", vertical: true },
-    { word: 10, text: "son", y: "3", x: "7-9", horizontal: true },
-    { word: 11, text: "ala", y: "4-6", x: "6", vertical: true },
-    { word: 12, text: "av", y: "5-6", x: "7", vertical: true },
-    { word: 13, text: "badalada", y: "5", x: "2-9", horizontal: true },
-    { word: 14, text: "cor", y: "6", x: "1-3", horizontal: true },
-    { word: 15, text: "lavar", y: "6", x: "5-9", horizontal: true },
-  ],
-  data: [
-    [{ tips: [1] }, { tips: [2, 3] }, { word: 2, arrow: { icon: "left-to-bottom", x: '0', y: '6px' } }, { tips: [4] }, { word: 4, arrow: { icon: "left-to-bottom", x: '0', y: '6px' } }, { tips: [5] }, { word: 5, arrow: { icon: "left-to-bottom", x: '0', y: '6px' } }, { tips: [7, 6] }, { word: 7, arrow: { icon: "left-to-bottom", x: '0', y: '6px' } },],
-    [{ word: 1, arrow: { icon: "top-to-right", x: '6px', y: '0' } }, { word: [1, 3], arrow: { icon: "to-bottom", x: 'calc(50% - 5px)', y: '0', size: 10 } }, { word: [2, 1], }, { word: 1, }, { word: [1, 4], }, { word: 1, }, { word: [1, 5], }, { word: [1, 6], arrow: { icon: "to-bottom", x: 'calc(50% - 5px)', y: '0', size: 10 } }, { word: [1, 7], }],
-    [{ tips: [8] }, { word: 3 }, { word: 2 }, { tips: [9] }, { word: 4 }, { tips: [10, 11] }, { word: [5, 10], arrow: { icon: "to-right", x: '0', y: 'calc(50% - 7px)', size: 14 } }, { word: [6, 10] }, { word: [7, 10] },],
-    [{ word: 8, arrow: { icon: "top-to-right", x: '6px', y: '0' } }, { word: [3, 8] }, { word: [2, 8] }, { word: [8, 9], arrow: { icon: "to-bottom", x: 'calc(50% - 5px)', y: '0', size: 10 } }, { word: [4, 8,] }, { word: [8, 11], arrow: { icon: "to-bottom", x: 'calc(50% - 5px)', y: '0', size: 10 } }, { tips: [12] }, { word: 6 }, { word: 7 },],
-    [{ tips: [13, 14] }, { word: [13, 3], arrow: { icon: "to-right", x: '0', y: 'calc(50% - 7px)', size: 14 } }, { word: [13, 2] }, { word: [13, 9] }, { word: [13, 4] }, { word: [13, 11] }, { word: [13, 12], arrow: { icon: "to-bottom", x: 'calc(50% - 5px)', y: '0', size: 10 } }, { word: [13, 6] }, { word: [13, 7] },],
-    [{ word: 14, arrow: { icon: "top-to-right", x: '6px', y: '0' } }, { word: [14, 3] }, { word: [14, 2] }, { tips: [15] }, { word: [15, 4], arrow: { icon: "to-right", x: '0', y: 'calc(50% - 7px)', size: 14 } }, { word: [15, 11] }, { word: [15, 12] }, { word: [15, 6] }, { word: [15, 7] },],
-  ],
-  tips: [
-    { word: 1, value: "Objeto de escrita que é recarregável" },
-    { word: 2, value: "Cortar a Grama" },
-    { word: 3, value: "Fertilizante de Solo" },
-    { word: 4, value: "De baixo (?): Triste" },
-    { word: 5, value: "Pedido de repetição ao bom músico" },
-    { word: 6, value: "Inspeção policial" },
-    { word: 7, value: "Entoar Músicas" },
-    { word: 8, value: "Claridade antes do sol nascer" },
-    { word: 9, value: "Olívio Dutra, político brasileiro" },
-    { word: 10, value: "Olívio Dutra, político brasileiro" },
-    { word: 11, value: "Olívio Dutra, político brasileiro" },
-    { word: 12, value: "Ângela Vieira, Atriz" },
-    { word: 13, value: "Som do Sino" },
-    { word: 14, value: "Divisão do arco-íris" },
-    { word: 15, value: "Banhar com água" },
-  ],
-};
-
 function Game() {
   const query = useQuery();
-  // console.log(query.get('mode'))
-  const [board, setBoard] = useState(initialBoard);
+  
+  const [board, setBoard] = useState(games[query.get('mode')][Math.floor(Math.random() * games[query.get('mode')].length)]);
   const [selectedWord, setSelectedWord] = useState(1);
 
   //Timer
@@ -114,7 +69,11 @@ function Game() {
 
   const onCorrect = () => {
     setBoard(fillWord(board, selectedWord));
-    setSelectedWord(word => word + 1);
+    if(selectedWord < board.words.length){
+      setSelectedWord(word => word + 1);
+    }else{
+      setSelectedWord(1);
+    }
   }
 
   const onSolution = () => {
@@ -128,17 +87,15 @@ function Game() {
   const onCheck = () => {
     const typedWord = getWordFromBoard(board.data, selectedWord);
     setBoard(checkWord(board, selectedWord, typedWord));
+    if(selectedWord < board.words.length){
+      setSelectedWord(word => word + 1);
+    }else{
+      setSelectedWord(1);
+    }
   }
 
   const onTip = () => {
     setBoard(fillLetter(board, selectedWord));
-
-    // const copy = board.data;
-
-    // copy[random.y][random.x].correct = true;
-    // copy[random.y][random.x].value = random.value;
-
-    // setBoard(board => ({...board, data: copy}))
   }
 
   return (
@@ -179,45 +136,50 @@ function Game() {
           </Button>
         </div>
         <div className="board-box">
-          <Board
-            game={board}
-            onSelect={(word) => setSelectedWord(word)}
-            selectedWord={selectedWord}
-            onUpdate={onUpdate}
-          />
+          {  board && (
+            <Board
+              game={board}
+              onSelect={(word) => setSelectedWord(word)}
+              selectedWord={selectedWord}
+              onUpdate={onUpdate}
+            />
+          )}
         </div>
         <div className="tip-box">
-          <Button
-            flat
-            type="button"
-            onClick={() => {
-              if (selectedWord === 1) {
-                setSelectedWord(initialBoard.words.length);
-              } else {
-                setSelectedWord(selectedWord - 1);
-              }
-            }}
-          >
-            <img src="/assets/left-arrow.png" height={60} />
-          </Button>
-          <h2>
-            {`${selectedWord}. ` +
-              initialBoard.tips.filter((tip) => tip.word === selectedWord)[0]
-                .value}
-          </h2>
-          <Button
-            flat
-            type="button"
-            onClick={() => {
-              if (selectedWord === initialBoard.words.length) {
-                setSelectedWord(1);
-              } else {
-                setSelectedWord(selectedWord + 1)
-              }
-            }}
-          >
-            <img src="/assets/right-arrow.png" height={60} />
-          </Button>
+          { board && (
+            <>
+              <Button
+                flat
+                type="button"
+                onClick={() => {
+                  if (selectedWord === 1) {
+                    setSelectedWord(board.words.length);
+                  } else {
+                    setSelectedWord(selectedWord - 1);
+                  }
+                }}
+              >
+                <img src="/assets/left-arrow.png" height={60} />
+              </Button>
+              <h2>
+                {`${selectedWord}. ` +
+                  board.words.filter((word) => word.word === selectedWord)[0].tip.value}
+              </h2>
+              <Button
+                flat
+                type="button"
+                onClick={() => {
+                  if (selectedWord === board.words.length) {
+                    setSelectedWord(1);
+                  } else {
+                    setSelectedWord(selectedWord + 1)
+                  }
+                }}
+              >
+                <img src="/assets/right-arrow.png" height={60} />
+              </Button>
+            </>
+          )}
         </div>
       </S.Box>
       <h3 className="powered-by">Powered by Mercadata Digital</h3>

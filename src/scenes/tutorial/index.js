@@ -14,7 +14,7 @@ function Tutorial() {
       <S.Box>
         <div className="header">
           <img className="logo" src={"/assets/game-logo.png"} />
-          <h1>Tutorial</h1>
+          <h1>Instruções</h1>
 
           <Button flat>
             <Link to={"/"}>
@@ -24,7 +24,7 @@ function Tutorial() {
         </div>
         <div className="options">
           <ReactPlayer 
-            url='https://www.youtube.com/watch?v=ysz5S6PUM-U'
+            url='/assets/tutorial.mp4'
             width= "750px"
             height= "480px"
             controls={false}

@@ -31,7 +31,7 @@ export const selectedCordinates = (board, word) => {
   }
 }
 
-export const fillCell = (game, value, x, y) => {
+export const fillCell = (game, value, x, y, z) => {
   const board = game.data;
 
   if(board.length <= y || board[0].length <= x){
@@ -39,22 +39,64 @@ export const fillCell = (game, value, x, y) => {
   }
 
   const copy = [ ...board ];
-  copy[y][x].value = value;
+  if(Number.isInteger(z)){
+    if(Array.isArray(copy[y][x].value)){
+      copy[y][x].value[z] = value;
+    }else{
+      copy[y][x].value = ['', ''];
+      copy[y][x].value[z] = value;
+    }
+  }else{
+    copy[y][x].value = value;
+  }
 
   return {...game, data:copy};
 }
 
-export const nextCell = (game, x, y, word) => {
+export const nextCell = (game, x, y, z, word) => {
   const words = game.words;
   const board = game.data;
 
   const currWord = words.filter((w) => w.word === word)[0];
 
+  if(board[y][x].double){
+    const { correct } = board[y][x];
+    if(Array.isArray(correct)){
+      for(let polygon = 0; polygon <= 1; polygon++) {
+        if(!correct[polygon]){
+          return {x, y, z: polygon};
+        }
+      }
+    }else{
+      if(Number.isInteger(z)){
+        if(z < 1){
+          return {x, y, z: z+1};
+        }
+      }else{
+        return {x, y, z: 0};
+      }
+    }
+  }
+
   if(currWord.vertical){
     const range = currWord.y.split('-').map(pos => pos - 1);
     if(y < range[1]){
       for(let i = y+1; i <= range[1]; i++){
-        if(!board[i][x].correct){
+        const { correct, double } = board[i][x];
+
+        if(double){
+          if(Array.isArray(correct)){
+            for(let polygon = 0; polygon <= 1; polygon++) {
+              if(!correct[polygon]){
+                return {x, y: i, z: polygon};
+              }
+            }
+          }else{
+            return {x, y: i, z: 0};
+          }
+        }
+
+        if(!correct){
           return {y: i, x};
         }
       }
@@ -65,7 +107,21 @@ export const nextCell = (game, x, y, word) => {
     const range = currWord.x.split('-').map(pos => pos - 1);
     if(x < range[1]){
       for(let i = x + 1; i <= range[1]; i++){
-        if(!board[y][i].correct){
+        const { correct, double } = board[y][i];
+
+        if(double){
+          if(Array.isArray(correct)){
+            for(let polygon = 0; polygon <= 1; polygon++) {
+              if(!correct[polygon]){
+                return {x: i, y, z: polygon};
+              }
+            }
+          }else{
+            return {x: i, y, z: 0};
+          }
+        }
+
+        if(!correct){
           return {x: i, y};
         }
       }
@@ -75,16 +131,49 @@ export const nextCell = (game, x, y, word) => {
   return false;
 }
 
-export const backCell = (game, x, y, word) => {
+export const backCell = (game, x, y, z, word) => {
   const words = game.words;
   const board = game.data;
 
   const currWord = words.filter((w) => w.word === word)[0];
 
+  if(board[y][x].double){
+    const { correct } = board[y][x];
+    if(Array.isArray(correct)){
+      for(let polygon = 1; polygon > 0; polygon--) {
+        if(!correct[polygon]){
+          return {x, y, z: polygon};
+        }
+      }
+    }else{
+      if(Number.isInteger(z)){
+        if(z > 0){
+          return {x, y, z: z-1};
+        }
+      }else{
+        return {x, y, z: 1};
+      }
+    }
+  }
+
   if(currWord.vertical){
     const range = currWord.y.split('-').map(pos => pos - 1);
     if(y - 1 >= range[0]){
       for(let i = y - 1; i >= range[0]; i--){
+        const { correct, double } = board[i][x];
+
+        if(double){
+          if(Array.isArray(correct)){
+            for(let polygon = 1; polygon > 0; polygon--) {
+              if(!correct[polygon]){
+                return {x, y: i, z: polygon};
+              }
+            }
+          }else{
+            return {x, y: i, z: 1};
+          }
+        }
+
         if(!board[i][x].correct){
           return {y: i, x};
         }
@@ -96,6 +185,20 @@ export const backCell = (game, x, y, word) => {
     const range = currWord.x.split('-').map(pos => pos - 1);
     if(x - 1 >= range[0]){
       for(let i = x - 1; i >= range[0]; i--){
+        const { correct, double } = board[y][i];
+
+        if(double){
+          if(Array.isArray(correct)){
+            for(let polygon = 1; polygon > 0; polygon--) {
+              if(!correct[polygon]){
+                return {x: i, y, z: polygon};
+              }
+            }
+          }else{
+            return {x: i, y, z: 1};
+          }
+        }
+
         if(!board[y][i].correct){
           return {x: i, y};
         }

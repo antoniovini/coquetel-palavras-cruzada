@@ -7,6 +7,7 @@ import MainMenu from "../scenes/main";
 import DifficultyMenu from "../scenes/difficulty";
 import Game from "../scenes/game";
 import Tutorial from "../scenes/tutorial";
+import Create from "../scenes/create";
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
           </Route>
           <Route path="/game">
             <Game />
+          </Route>
+          <Route path="/create">
+            <Create />
           </Route>
           <Route path="/">
             <MainMenu />
