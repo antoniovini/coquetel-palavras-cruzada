@@ -5,12 +5,13 @@ import coquetel from "../assets/coquetel.png";
 
 
 const Container = styled.div`
-  background-image: url('../assets/background.png');
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  position:relative;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 `;
 
 const LogoContainer = styled.div`
@@ -19,7 +20,6 @@ const LogoContainer = styled.div`
   align-items: center;
   height: 150px;
   width:100%;
-  position: absolute;
 `;
 
 

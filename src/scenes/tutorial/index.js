@@ -25,8 +25,7 @@ function Tutorial() {
         <div className="options">
           <ReactPlayer 
             url='/assets/tutorial.mp4'
-            width= "750px"
-            height= "480px"
+            width= "100%"
             controls={false}
             playing={true}
             className="player"

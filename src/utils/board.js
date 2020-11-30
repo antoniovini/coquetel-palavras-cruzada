@@ -61,13 +61,8 @@ export const nextCell = (game, x, y, z, word) => {
 
   if(board[y][x].double){
     const { correct } = board[y][x];
-    if(Array.isArray(correct)){
-      for(let polygon = 0; polygon <= 1; polygon++) {
-        if(!correct[polygon]){
-          return {x, y, z: polygon};
-        }
-      }
-    }else{
+
+    if(!correct){
       if(Number.isInteger(z)){
         if(z < 1){
           return {x, y, z: z+1};
@@ -84,16 +79,8 @@ export const nextCell = (game, x, y, z, word) => {
       for(let i = y+1; i <= range[1]; i++){
         const { correct, double } = board[i][x];
 
-        if(double){
-          if(Array.isArray(correct)){
-            for(let polygon = 0; polygon <= 1; polygon++) {
-              if(!correct[polygon]){
-                return {x, y: i, z: polygon};
-              }
-            }
-          }else{
-            return {x, y: i, z: 0};
-          }
+        if(double && !correct){
+          return {x, y: i, z: 0};
         }
 
         if(!correct){
@@ -109,16 +96,8 @@ export const nextCell = (game, x, y, z, word) => {
       for(let i = x + 1; i <= range[1]; i++){
         const { correct, double } = board[y][i];
 
-        if(double){
-          if(Array.isArray(correct)){
-            for(let polygon = 0; polygon <= 1; polygon++) {
-              if(!correct[polygon]){
-                return {x: i, y, z: polygon};
-              }
-            }
-          }else{
-            return {x: i, y, z: 0};
-          }
+        if(double && !correct){
+          return {x: i, y, z: 0};
         }
 
         if(!correct){
@@ -139,13 +118,8 @@ export const backCell = (game, x, y, z, word) => {
 
   if(board[y][x].double){
     const { correct } = board[y][x];
-    if(Array.isArray(correct)){
-      for(let polygon = 1; polygon > 0; polygon--) {
-        if(!correct[polygon]){
-          return {x, y, z: polygon};
-        }
-      }
-    }else{
+
+    if(!correct){
       if(Number.isInteger(z)){
         if(z > 0){
           return {x, y, z: z-1};
@@ -156,22 +130,33 @@ export const backCell = (game, x, y, z, word) => {
     }
   }
 
+  // if(board[y][x].double){
+  //   const { correct } = board[y][x];
+  //   if(Array.isArray(correct)){
+  //     for(let polygon = 1; polygon > 0; polygon--) {
+  //       if(!correct[polygon]){
+  //         return {x, y, z: polygon};
+  //       }
+  //     }
+  //   }else{
+  //     if(Number.isInteger(z)){
+  //       if(z > 0){
+  //         return {x, y, z: z-1};
+  //       }
+  //     }else{
+  //       return {x, y, z: 1};
+  //     }
+  //   }
+  // }
+
   if(currWord.vertical){
     const range = currWord.y.split('-').map(pos => pos - 1);
     if(y - 1 >= range[0]){
       for(let i = y - 1; i >= range[0]; i--){
         const { correct, double } = board[i][x];
 
-        if(double){
-          if(Array.isArray(correct)){
-            for(let polygon = 1; polygon > 0; polygon--) {
-              if(!correct[polygon]){
-                return {x, y: i, z: polygon};
-              }
-            }
-          }else{
-            return {x, y: i, z: 1};
-          }
+        if(double && !correct){
+          return {x, y: i, z: 1};
         }
 
         if(!board[i][x].correct){
@@ -187,16 +172,8 @@ export const backCell = (game, x, y, z, word) => {
       for(let i = x - 1; i >= range[0]; i--){
         const { correct, double } = board[y][i];
 
-        if(double){
-          if(Array.isArray(correct)){
-            for(let polygon = 1; polygon > 0; polygon--) {
-              if(!correct[polygon]){
-                return {x: i, y, z: polygon};
-              }
-            }
-          }else{
-            return {x: i, y, z: 1};
-          }
+        if(double && !correct){
+          return {x: i, y, z: 1};
         }
 
         if(!board[y][i].correct){
@@ -217,10 +194,24 @@ export const getWordFromBoard = (board, word) => {
       const letter = board[y][x];
       if(Array.isArray(letter.word)){
         if(letter.word.includes(word)){
-          letters.push(letter.value || '');
+          if(letter.double){
+            if(Array.isArray(letter.value)){
+              letters.push(letter.value[0] || '');
+              letters.push(letter.value[1] || '');
+            }
+          }else{
+            letters.push(letter.value || '');
+          }
         }
       }else if(letter.word === word) {
-        letters.push(letter.value || '');
+        if(letter.double){
+          if(Array.isArray(letter.value)){
+            letters.push(letter.value[0] || '');
+            letters.push(letter.value[1] || '');
+          }
+        }else{
+          letters.push(letter.value || '');
+        }
       }
     }
   }
@@ -253,20 +244,38 @@ export const fillWord = (game, word) => {
   if(Array.isArray(cordinates.y)){
     let counter = 0;
     for(let y = cordinates.y[0]; y <= cordinates.y[1]; y++){
-      board[y][cordinates.x].value = splitedValue[counter];
-      board[y][cordinates.x].correct = true;
-      counter ++;
+      if(board[y][cordinates.x].double){
+        board[y][cordinates.x].correct = [true, true];
+        board[y][cordinates.x].value = [splitedValue[counter], splitedValue[counter + 1]];
+        counter += 2;
+      }else{
+        board[y][cordinates.x].value = splitedValue[counter];
+        board[y][cordinates.x].correct = true;
+        counter ++;
+      }
     }
   }else if(Array.isArray(cordinates.x)){
     let counter = 0;
     for(let x = cordinates.x[0]; x <= cordinates.x[1]; x++){
-      board[cordinates.y][x].correct = true;
-      board[cordinates.y][x].value = splitedValue[counter];
-      counter ++;
+      if(board[cordinates.y][x].double){
+        board[cordinates.y][x].correct = [true, true];
+        board[cordinates.y][x].value = [splitedValue[counter], splitedValue[counter + 1]];
+        counter += 2;
+      }else{
+        board[cordinates.y][x].correct = true;
+        board[cordinates.y][x].value = splitedValue[counter];
+        counter ++;
+      }
+      
     }
   }else{
-    board[cordinates.y][cordinates.x].value = splitedValue[0];
-    board[cordinates.y][cordinates.x].correct = true;
+    if(board[cordinates.y][cordinates.x].double){
+      board[cordinates.y][cordinates.x].correct = [true, true];
+      board[cordinates.y][cordinates.x].value = [splitedValue[0], splitedValue[1]];
+    }else{
+      board[cordinates.y][cordinates.x].value = splitedValue[0];
+      board[cordinates.y][cordinates.x].correct = true;
+    }
   }
 
   return {...game, data: board};
@@ -290,20 +299,16 @@ export const checkWord = (game, word, value) => {
     }
 
     if(Array.isArray(cordinates.y)){
-      let counter = 0;
       for(let y = cordinates.y[0]; y <= cordinates.y[1]; y++){
         if(!board[y][cordinates.x].correct){
           board[y][cordinates.x].correct = true;
         }
-        counter ++;
       }
     }else if(Array.isArray(cordinates.x)){
-      let counter = 0;
       for(let x = cordinates.x[0]; x <= cordinates.x[1]; x++){
         if(!board[cordinates.y][x].correct){
           board[cordinates.y][x].correct = true;
         }
-        counter ++;
       }
     }else{
       if(!board[cordinates.y][cordinates.x].correct){
@@ -324,20 +329,16 @@ export const checkWord = (game, word, value) => {
     }
 
     if(Array.isArray(cordinates.y)){
-      let counter = 0;
       for(let y = cordinates.y[0]; y <= cordinates.y[1]; y++){
         if(!board[y][cordinates.x].correct){
           board[y][cordinates.x].failed = true;
         }
-        counter ++;
       }
     }else if(Array.isArray(cordinates.x)){
-      let counter = 0;
       for(let x = cordinates.x[0]; x <= cordinates.x[1]; x++){
         if(!board[cordinates.y][x].correct){
           board[cordinates.y][x].failed = true;
         }
-        counter ++;
       }
     }else{
       if(!board[cordinates.y][cordinates.x].correct){
@@ -387,10 +388,34 @@ export const fillLetter = (game, word) => {
     return {...game};
   }
 
-  console.log(random.x, random.y, board[random.y][random.x]);
-
   board[random.y][random.x].correct = true;
-  board[random.y][random.x].value = wordInfo.text[random.id];
+
+  if(board[random.y][random.x].double){
+    board[random.y][random.x].value = [wordInfo.text[random.id], wordInfo.text[random.id+1]];
+  }else{
+    const doubles = wordInfo.doubles;
+    let counter = 0;
+
+    if(doubles){
+      if(wordInfo.horizontal){
+        doubles.forEach(double => {
+          if(double - 1 < random.x){
+            counter++;
+          }
+        })
+      }
+      if(wordInfo.vertical){
+        doubles.forEach(double => {
+          if(double - 1 < random.y){
+            counter++;
+          }
+        })
+      }
+    }
+
+    board[random.y][random.x].value = wordInfo.text[random.id + (counter)];
+  }
+  
 
   return {...game, data: board};
 }

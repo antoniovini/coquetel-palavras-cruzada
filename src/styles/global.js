@@ -6,11 +6,15 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-family: 'Solway', serif;
     text-decoration: none;
+    box-sizing: border-box;
   }
 
   html, body, #root{
     width: 100%;
     height: 100%;
+    background-image: url("/assets/background.png");
+    background-position: center;
+    background-size: cover;
   }
 `;
  

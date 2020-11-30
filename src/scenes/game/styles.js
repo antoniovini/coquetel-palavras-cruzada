@@ -2,22 +2,32 @@ import styled from 'styled-components';
 import config from '../../config.json';
 
 export const Container = styled.div`
+  /* min-width: 100%;
+  min-height: 100%; */
+
   width: 100%;
-  height: 100%;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  gap: 20px;
 
   h3.powered-by{
     color: white;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  @media(min-width: 800px){
+    width: 750px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
 export const Box = styled.div`
+  display: flex;
+  flex-direction: column;
+
   .header{
     padding: 20px;
     gap: 20px;
@@ -26,6 +36,9 @@ export const Box = styled.div`
     border-radius: 20px 20px 0 0;
 
     display: flex;
+
+    overflow: auto;
+
 
     .startstop{
       cursor: pointer;
@@ -37,9 +50,16 @@ export const Box = styled.div`
   }
 
   .board-box{
-    background-color: white;
     padding: 20px;
-    height: ${config.game.boardHeight}px;
+    width: 100%;
+    background-color: white;
+    overflow: auto;
+
+    @media(min-width: 800px){
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   .tip-box{
@@ -52,6 +72,8 @@ export const Box = styled.div`
     border-radius: 0 0 20px 20px;
 
     transition: height .2s;
+
+    padding: 10px 0;
 
     h2{
       flex: 1;

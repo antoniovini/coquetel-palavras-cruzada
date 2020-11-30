@@ -7,7 +7,8 @@ function Board({ game, onSelect, onUpdate, selectedWord }) {
   const [focus, setFocus] = useState({});
 
   const updateValue = (evt, x, y, z) => {
-    if(evt.key === "Backspace"){
+    alert(evt.key);
+    if(evt.key === 'Backspace'){
       setTimeout(() => {
         const back = backCell(game, x, y, z, selectedWord);
         onUpdate(fillCell(game, "", x, y, z));
@@ -16,7 +17,7 @@ function Board({ game, onSelect, onUpdate, selectedWord }) {
         }
       }, 200);
     }else{
-      if(evt.key.length === 1){
+      if(evt.key.length <= 1){
         onUpdate(fillCell(game, evt.key, x, y, z));
         const next = nextCell(game, x, y, z, selectedWord);
         if(next){
@@ -102,12 +103,18 @@ function Board({ game, onSelect, onUpdate, selectedWord }) {
                           <div className="top">
                             <input 
                               maxLength="1"
+                              value={game.data[rowIndex][columnIndex].value ? game.data[rowIndex][columnIndex].value[0] || '' : ''}
+                              ref={ref => {
+                                if(!focus){
+                                  return
+                                }
+    
+                                if(focus.x === columnIndex  && focus.y === rowIndex && focus.z === 0 && ref) {
+                                  ref.focus();
+                                }
+                              }}
                               onKeyDown={(evt) => {
-                                if(Array.isArray(cell.correct)){
-                                  if(!cell.correct[0]){
-                                    updateValue(evt, columnIndex, rowIndex, 0);
-                                  }
-                                }else{
+                                if(!cell.correct){
                                   updateValue(evt, columnIndex, rowIndex, 0);
                                 }
                               }}
@@ -127,11 +134,7 @@ function Board({ game, onSelect, onUpdate, selectedWord }) {
                             <input 
                               maxLength="1"
                               onKeyDown={(evt) => {
-                                if(Array.isArray(cell.correct)){
-                                  if(!cell.correct[1]){
-                                    updateValue(evt, columnIndex, rowIndex, 1);
-                                  }
-                                }else{
+                                if(!cell.correct){
                                   updateValue(evt, columnIndex, rowIndex, 1);
                                 }
                               }}

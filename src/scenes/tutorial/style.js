@@ -4,19 +4,22 @@ export const Container = styled.div`
   width: 100%;
   height: 100%;
 
-  background-image: url('/assets/background.png');
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
   gap: 20px;
+
+  padding: 20px;
 `;
 
 export const Box = styled.div`
   display: flex;
   flex-direction: column;
+
+  width: 100%;
+  max-width: 750px;
 
   div.header{
     user-select: none;

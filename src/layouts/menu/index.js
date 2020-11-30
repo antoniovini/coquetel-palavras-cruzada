@@ -8,9 +8,9 @@ function MenuLayout(title = "", options = [], backTo) {
   return () => {
     return (
       <S.Container>
-      <S.LogoContainer>
-        <S.Logo/>
-      </S.LogoContainer>
+        <S.LogoContainer>
+          <S.Logo/>
+        </S.LogoContainer>
         <S.Box>
           <div className="header">
             <img className="logo" src={"/assets/game-logo.png"} />

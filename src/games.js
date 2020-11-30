@@ -11,6 +11,8 @@ export default {
           x: "1-9",
           horizontal: true,
           tip: { x: 1, y: 1, value: "Objeto de escrita que é recarregável" },
+          arrow: { icon: "top-to-right", pos: {x: '6px', y: '0'} },
+          doubles: [5]
         },
         {
           word: 2,
@@ -30,11 +32,12 @@ export default {
         },
         {
           word: 4,
-          text: "astral",
+          text: "asetral",
           y: "1-6",
           x: "5",
           vertical: true,
           tip: { x: 4, y: 1, value: "De baixo (?): Triste" },
+          doubles: [2]
         },
         {
           word: 5,
