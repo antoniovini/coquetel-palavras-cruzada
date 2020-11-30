@@ -155,8 +155,13 @@ export default {
           x: "5-6",
           horizontal: true,
           tip: { x: 4, y: 3, value: "Eu e eles." },
+<<<<<<< HEAD
           arrow: { icon: "to-right", pos: { x: "6px", y: "0" } },
           doubles: [2],
+=======
+          arrow: { icon: "to-right", pos: { y: "45%", x: "5%" }, size: 10 },
+          doubles: [6],
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
         },
         {
           word: 3,
@@ -165,7 +170,11 @@ export default {
           x: "8",
           horizontal: true,
           tip: { x: 7, y: 3, value: "Quinta vogal" },
+<<<<<<< HEAD
           arrow: { icon: "to-right", pos: { x: "6px", y: "0" } },
+=======
+          arrow: { icon: "to-right", pos: { y: "45%", x: "5%" }, size: 10 },
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
         },
         {
           word: 4,
@@ -174,7 +183,11 @@ export default {
           x: "10-13",
           horizontal: true,
           tip: { x: 9, y: 3, value: "Arma indígena." },
+<<<<<<< HEAD
           arrow: { icon: "to-right", pos: { x: "6px", y: "0" } },
+=======
+          arrow: { icon: "to-right", pos: { y: "45%", x: "5%" }, size: 10 },
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
         },
         {
           word: 5,
@@ -192,7 +205,11 @@ export default {
           x: "2-3",
           horizontal: true,
           tip: { x: 1, y: 5, value: "Na moda (gíria)." },
+<<<<<<< HEAD
           arrow: { icon: "to-right", pos: { x: "6px", y: "0" } },
+=======
+          arrow: { icon: "to-right", pos: { y: "45%", x: "5%" }, size: 10 },
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
         },
         {
           word: 7,
@@ -201,7 +218,11 @@ export default {
           x: "7-9",
           horizontal: true,
           tip: { x: 6, y: 5, value: "Ar, em inglês." },
+<<<<<<< HEAD
           arrow: { icon: "to-right", pos: { x: "6px", y: "0" } },
+=======
+          arrow: { icon: "to-right", pos: { y: "45%", x: "5%" }, size: 10 },
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
         },
         {
           word: 8,
@@ -210,7 +231,11 @@ export default {
           x: "11-14",
           horizontal: true,
           tip: { x: 10, y: 5, value: "Cristais de banho." },
+<<<<<<< HEAD
           arrow: { icon: "to-right", pos: { x: "6px", y: "0" } },
+=======
+          arrow: { icon: "to-right", pos: { y: "45%", x: "5%" }, size: 10 },
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
         },
         {
           word: 9,
@@ -219,7 +244,11 @@ export default {
           x: "2-14",
           horizontal: true,
           tip: { x: 1, y: 6, value: "Parceiro de Luciano (MPB)" },
+<<<<<<< HEAD
           arrow: { icon: "to-right", pos: { x: "6px", y: "0" } },
+=======
+          arrow: { icon: "to-right", pos: { y: "45%", x: "5%" }, size: 10 },
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
         },
         {
           word: 10,
@@ -236,12 +265,17 @@ export default {
           y: "7",
           x: "10-12",
           horizontal: true,
+<<<<<<< HEAD
           tip: {
             x: 9,
             y: 7,
             value: "Inscrição no banheiro feminino.",
             arrow: { icon: "to-right", pos: { x: "6px", y: "0" } },
           },
+=======
+          tip: { x: 9, y: 7, value: "Inscrição no banheiro feminino." },
+          arrow: { icon: "to-right", pos: { y: "45%", x: "5%" }, size: 10 },
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
         },
         {
           word: 12,
@@ -250,7 +284,11 @@ export default {
           x: "2-3",
           horizontal: true,
           tip: { x: 1, y: 8, value: "Doutor (abrev.)." },
+<<<<<<< HEAD
           arrow: { icon: "to-right", pos: { x: "6px", y: "0" } },
+=======
+          arrow: { icon: "to-right", pos: { y: "45%", x: "5%" }, size: 10 },
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
         },
         {
           word: 13,
@@ -259,7 +297,11 @@ export default {
           x: "6-10",
           horizontal: true,
           tip: { x: 5, y: 8, value: "Livro com coleção de mapas." },
+<<<<<<< HEAD
           arrow: { icon: "to-right", pos: { x: "6px", y: "0" } },
+=======
+          arrow: { icon: "to-right", pos: { y: "45%", x: "5%" }, size: 10 },
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
         },
         {
           word: 14,
@@ -268,7 +310,11 @@ export default {
           x: "12-14",
           horizontal: true,
           tip: { x: 11, y: 8, value: "Scooby - (?), cão de desenho animado." },
+<<<<<<< HEAD
           arrow: { icon: "to-right", pos: { x: "6px", y: "0" } },
+=======
+          arrow: { icon: "to-right", pos: { y: "45%", x: "5%" }, size: 10 },
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
         },
         {
           word: 15,
@@ -287,7 +333,11 @@ export default {
           x: "10-14",
           horizontal: true,
           tip: { x: 9, y: 9, value: "Dar desconto (no preço)." },
+<<<<<<< HEAD
           arrow: { icon: "top-to-right", pos: { x: "6px", y: "0" } },
+=======
+          arrow: { icon: "to-right", pos: { y: "45%", x: "5%" }, size: 10 },
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
         },
         {
           word: 17,
@@ -296,7 +346,11 @@ export default {
           x: "2",
           vertical: true,
           tip: { x: 2, y: 1, value: "Prudente." },
+<<<<<<< HEAD
           arrow: { icon: "to-bottom", pos: { x: "6px", y: "0" } },
+=======
+          arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
         },
         {
           word: 18,
@@ -305,7 +359,11 @@ export default {
           x: "3",
           vertical: true,
           tip: { x: 2, y: 1, value: "Local onde se colocam plantas." },
+<<<<<<< HEAD
           arrow: { icon: "top-to-right", pos: { x: "6px", y: "0" } },
+=======
+          arrow: { icon: "left-to-bottom", pos: { x: "-2%", y: "8%" } },
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
           doubles: [1],
         },
         {
@@ -315,7 +373,11 @@ export default {
           x: "4",
           vertical: true,
           tip: { x: 4, y: 1, value: "Rua (abrev.)." },
+<<<<<<< HEAD
           arrow: { icon: "top-to-right", pos: { x: "6px", y: "0" } },
+=======
+          arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
         },
         {
           word: 20,
@@ -324,7 +386,11 @@ export default {
           x: "4",
           vertical: true,
           tip: { x: 4, y: 3, value: "Ene." },
+<<<<<<< HEAD
           arrow: { icon: "top-to-right", pos: { x: "6px", y: "0" } },
+=======
+          arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
         },
         {
           word: 21,
@@ -333,7 +399,11 @@ export default {
           x: "4",
           vertical: true,
           tip: { x: 4, y: 5, value: "Sílabas de zona." },
+<<<<<<< HEAD
           arrow: { icon: "top-to-right", pos: { x: "6px", y: "0" } },
+=======
+          arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
         },
         {
           word: 22,
@@ -342,7 +412,11 @@ export default {
           x: "4",
           vertical: true,
           tip: { x: 4, y: 8, value: "Formato de estada sinuosa." },
+<<<<<<< HEAD
           arrow: { icon: "top-to-right", pos: { x: "6px", y: "0" } },
+=======
+          arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
         },
         {
           word: 23,
@@ -351,7 +425,11 @@ export default {
           x: "5",
           vertical: true,
           tip: { x: 4, y: 1, value: "Capital da inglaterra." },
+<<<<<<< HEAD
           arrow: { icon: "top-to-right", pos: { x: "6px", y: "0" } },
+=======
+          arrow: { icon: "left-to-bottom", pos: { x: "-2%", y: "8%" } },
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
         },
         {
           word: 24,
@@ -360,7 +438,11 @@ export default {
           x: "6",
           vertical: true,
           tip: { x: 7, y: 1, value: "A mulher da terceira idade." },
+<<<<<<< HEAD
           arrow: { icon: "top-to-right", pos: { x: "6px", y: "0" } },
+=======
+          arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
           doubles: [3],
         },
         {
@@ -370,7 +452,11 @@ export default {
           x: "6",
           vertical: true,
           tip: { x: 6, y: 7, value: "Vogais de 'gato'." },
+<<<<<<< HEAD
           arrow: { icon: "top-to-right", pos: { x: "6px", y: "0" } },
+=======
+          arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
         },
         {
           word: 26,
@@ -379,7 +465,11 @@ export default {
           x: "7",
           vertical: true,
           tip: { x: 7, y: 3, value: "Afasta-se." },
+<<<<<<< HEAD
           arrow: { icon: "top-to-right", pos: { x: "6px", y: "0" } },
+=======
+          arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
         },
         {
           word: 27,
@@ -387,12 +477,17 @@ export default {
           y: "8-9",
           x: "7",
           vertical: true,
+<<<<<<< HEAD
           tip: {
             x: 7,
             y: 7,
             value: "Televisão (abrev.).",
           },
           arrow: { icon: "top-to-right", pos: { x: "6px", y: "0" } },
+=======
+          tip: { x: 7, y: 7, value: "Televisão (abrev.)." },
+          arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
         },
         {
           word: 28,
@@ -401,7 +496,11 @@ export default {
           x: "8",
           vertical: true,
           tip: { x: 8, y: 1, value: "Peles removidas pela manicure." },
+<<<<<<< HEAD
           arrow: { icon: "to-bottom", pos: { x: "6px", y: "0" } },
+=======
+          arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
           doubles: [9],
         },
         {
@@ -411,7 +510,11 @@ export default {
           x: "9",
           vertical: true,
           tip: { x: 9, y: 3, value: "Época período." },
+<<<<<<< HEAD
           arrow: { icon: "top-to-right", pos: { x: "6px", y: "0" } },
+=======
+          arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
         },
         {
           word: 30,
@@ -420,7 +523,12 @@ export default {
           x: "10",
           vertical: true,
           tip: { x: 9, y: 1, value: "Fruta de polpa branca (pl.)." },
+<<<<<<< HEAD
           arrow: { icon: "top-to-right", pos: { x: "6px", y: "0" } },
+=======
+          arrow: { icon: "left-to-bottom", pos: { x: "-2%", y: "8%" } },
+          doubles:[1]
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
         },
         {
           word: 31,
@@ -429,7 +537,11 @@ export default {
           x: "10",
           vertical: true,
           tip: { x: 10, y: 5, value: "Móvel de escritório." },
+<<<<<<< HEAD
           arrow: { icon: "top-to-right", pos: { x: "6px", y: "0" } },
+=======
+          arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
         },
         {
           word: 32,
@@ -438,7 +550,11 @@ export default {
           x: "11",
           vertical: true,
           tip: { x: 11, y: 4, value: "Tempero iodado." },
+<<<<<<< HEAD
           arrow: { icon: "top-to-right", pos: { x: "6px", y: "0" } },
+=======
+          arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
         },
         {
           word: 33,
@@ -447,7 +563,11 @@ export default {
           x: "12",
           vertical: true,
           tip: { x: 11, y: 1, value: "Grande número de animais." },
+<<<<<<< HEAD
           arrow: { icon: "top-to-right", pos: { x: "6px", y: "0" } },
+=======
+          arrow: { icon: "left-to-bottom", pos: { x: "-2%", y: "8%" } },
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
         },
         {
           word: 34,
@@ -456,7 +576,11 @@ export default {
           x: "13",
           vertical: true,
           tip: { x: 14, y: 1, value: "Tempo passado." },
+<<<<<<< HEAD
           arrow: { icon: "top-to-right", pos: { x: "6px", y: "0" } },
+=======
+          arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
         },
         {
           word: 35,
@@ -465,7 +589,11 @@ export default {
           x: "13",
           vertical: true,
           tip: { x: 13, y: 4, value: "Igrid Guimarães atriz." },
+<<<<<<< HEAD
           arrow: { icon: "top-to-right", pos: { x: "6px", y: "0" } },
+=======
+          arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
         },
         {
           word: 36,
@@ -474,8 +602,13 @@ export default {
           x: "13",
           vertical: true,
           tip: { x: 13, y: 7, value: "Sufixo de 'filhote'." },
+<<<<<<< HEAD
           arrow: { icon: "to-bottom", pos: { x: "6px", y: "0" } },
           doubles: [2],
+=======
+          arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
+          doubles: [9],
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
         },
         {
           word: 37,
@@ -484,6 +617,7 @@ export default {
           x: "14",
           vertical: true,
           tip: { x: 14, y: 3, value: "Utensílio do vendedor de praia." },
+<<<<<<< HEAD
           arrow: { icon: "to-bottom", pos: { x: "6px", y: "0" } },
         },
       ],
@@ -1056,6 +1190,12 @@ export default {
           { word: [14, 30] },
         ],
       ],
+=======
+          arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
+        },
+      ],
+      data:[[{"tips":[1]},{"tips":[17,18]},{"double":true,"word":[18],"arrow":{"icon":"left-to-bottom","x":"-2%","y":"8%"}},{"tips":[19,23]},{"word":[23],"arrow":{"icon":"left-to-bottom","x":"-2%","y":"8%"}},{"word":[24],"arrow":{"icon":"to-bottom","x":"45%","y":"5%","size":7.5}},{"tips":[24]},{"tips":[28]},{"tips":[30]},{"double":true,"word":[30],"arrow":{"icon":"left-to-bottom","x":"-2%","y":"8%"}},{"tips":[33]},{"word":[33],"arrow":{"icon":"left-to-bottom","x":"-2%","y":"8%"}},{"word":[34],"arrow":{"icon":"to-bottom","x":"45%","y":"5%","size":7.5}},{"tips":[34]}],[{"word":[1],"arrow":{"icon":"top-to-right","x":"6px","y":"0"}},{"word":[1,17],"arrow":{"icon":"to-bottom","x":"45%","y":"5%","size":7.5}},{"word":[1,18]},{"word":[1,19],"arrow":{"icon":"to-bottom","x":"45%","y":"5%","size":7.5}},{"word":[1,23]},{"word":[1,24]},{"word":[1]},{"word":[1,28],"arrow":{"icon":"to-bottom","x":"45%","y":"5%","size":7.5}},{"word":[1]},{"word":[1,30]},{"word":[1]},{"word":[1,33]},{"word":[1,34]},{"word":[1]}],[{"tips":[5]},{"word":[17]},{"word":[18]},{"tips":[2,20]},{"word":[2,23],"arrow":{"icon":"to-right","x":"5%","y":"45%","size":10}},{"double":true,"word":[2,24]},{"tips":[3,26]},{"word":[3,28],"arrow":{"icon":"to-right","x":"5%","y":"45%","size":10}},{"tips":[4,29]},{"word":[4,30],"arrow":{"icon":"to-right","x":"5%","y":"45%","size":10}},{"word":[4]},{"word":[4,33]},{"word":[4,34]},{"tips":[37]}],[{"word":[5],"arrow":{"icon":"top-to-right","x":"6px","y":"0"}},{"word":[5,17]},{"word":[5,18]},{"word":[5,20],"arrow":{"icon":"to-bottom","x":"45%","y":"5%","size":7.5}},{"word":[5,23]},{"word":[5,24]},{"word":[5,26],"arrow":{"icon":"to-bottom","x":"45%","y":"5%","size":7.5}},{"word":[5,28]},{"word":[5,29],"arrow":{"icon":"to-bottom","x":"45%","y":"5%","size":7.5}},{"word":[5,30]},{"tips":[32]},{"word":[33]},{"tips":[35]},{"word":[37],"arrow":{"icon":"to-bottom","x":"45%","y":"5%","size":7.5}}],[{"tips":[6]},{"word":[6,17],"arrow":{"icon":"to-right","x":"5%","y":"45%","size":10}},{"word":[6,18]},{"tips":[21]},{"word":[23]},{"tips":[7]},{"word":[7,26],"arrow":{"icon":"to-right","x":"5%","y":"45%","size":10}},{"word":[7,28]},{"word":[7,29]},{"tips":[8,31]},{"word":[8,32],"arrow":{"icon":"to-bottom","x":"45%","y":"5%","size":7.5}},{"word":[8,33]},{"word":[8,35],"arrow":{"icon":"to-bottom","x":"45%","y":"5%","size":7.5}},{"word":[8,37]}],[{"tips":[9,10]},{"word":[9,17],"arrow":{"icon":"to-right","x":"5%","y":"45%","size":10}},{"word":[9,18]},{"word":[9,21],"arrow":{"icon":"to-bottom","x":"45%","y":"5%","size":7.5}},{"word":[9,23]},{"word":[9]},{"word":[9,26]},{"word":[9,28]},{"word":[9,29]},{"word":[9,31],"arrow":{"icon":"to-bottom","x":"45%","y":"5%","size":7.5}},{"word":[9,32]},{"word":[9,33]},{"word":[9,35]},{"word":[9,37]}],[{"word":[10],"arrow":{"icon":"top-to-right","x":"6px","y":"0"}},{"word":[10,17]},{"word":[10,18]},{"word":[10,21]},{"word":[10,23]},{"tips":[25]},{"tips":[27]},{"word":[28]},{"tips":[11]},{"word":[11,31],"arrow":{"icon":"to-right","x":"5%","y":"45%","size":10}},{"word":[11,32]},{"word":[11,33]},{"tips":[36]},{"word":[37]}],[{"tips":[12,15]},{"word":[12,17],"arrow":{"icon":"to-right","x":"5%","y":"45%","size":10}},{"word":[12,18]},{"tips":[22]},{"tips":[13]},{"word":[13,25],"arrow":{"icon":"to-bottom","x":"45%","y":"5%","size":7.5}},{"word":[13,27],"arrow":{"icon":"to-bottom","x":"45%","y":"5%","size":7.5}},{"word":[13,28]},{"word":[13]},{"word":[13,31]},{"tips":[14]},{"word":[14,33],"arrow":{"icon":"to-right","x":"5%","y":"45%","size":10}},{"word":[14,36],"arrow":{"icon":"to-bottom","x":"45%","y":"5%","size":7.5}},{"word":[14,37]}],[{"word":[15],"arrow":{"icon":"top-to-right","x":"6px","y":"0"}},{"word":[15,17]},{"word":[15,18]},{"word":[15,22],"arrow":{"icon":"to-bottom","x":"45%","y":"5%","size":7.5}},{"word":[15]},{"word":[15,25]},{"word":[15,27]},{"double":true,"word":[15,28]},{"tips":[16]},{"word":[16,31],"arrow":{"icon":"to-right","x":"5%","y":"45%","size":10}},{"word":[16]},{"word":[16,33]},{"word":[16,36],"double":true},{"word":[16,37]}]]
+>>>>>>> 82796f2627d442accd464909f3860b1a00f2a5b9
     },
   ],
 };
