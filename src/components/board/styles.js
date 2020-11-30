@@ -2,13 +2,10 @@ import styled, { css } from "styled-components";
 import config from "../../config.json";
 
 export const Container = styled.div`
-  width: 100%;
-  height: 100%;
-
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
 `;
 
 export const Row = styled.div`
@@ -23,10 +20,8 @@ export const Cell = styled.div`
 
   user-select: none;
 
-  width: ${({ yCount }) =>
-    (config.game.boardHeight - config.game.boardPadding * 2) / yCount}px;
-  height: ${({ yCount }) =>
-    (config.game.boardHeight - config.game.boardPadding * 2) / yCount}px;
+  width: 56px;
+  height: 56px;
 
   transition: background-color 0.2s;
 
@@ -58,7 +53,8 @@ export const Cell = styled.div`
         `};
 
   .tip {
-    flex: 1;
+    width: 56px;
+    height: 56px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -98,7 +94,7 @@ export const Cell = styled.div`
 
     transition: border 0.2s;
 
-    font-size: 28px;
+    font-size: 1.4;
   }
 
   input:focus {
@@ -116,8 +112,8 @@ export const Arrow = styled.img`
 `;
 
 export const Double = styled.div`
-  flex: 1;
-  height: 100%;
+  width: 56px;
+  height: 56px;
 
   position: relative;
 

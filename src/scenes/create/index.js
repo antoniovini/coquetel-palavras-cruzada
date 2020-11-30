@@ -410,7 +410,7 @@ function Create() {
         if(doubles){
           for(let z = 0; z < doubles.length; z++){
             const double = doubles[z] - 1;
-            boardCopy[coordinates.y][double] = { ...boardCopy[coordinates.y][double], double: true };
+            boardCopy[coordinates.y][coordinates.x[0] + double] = { ...boardCopy[coordinates.y][coordinates.x[0] + double], double: true };
           }
         }
 
@@ -425,7 +425,7 @@ function Create() {
         if(doubles){
           for(let z = 0; z < doubles.length; z++){
             const double = doubles[z] - 1;
-            boardCopy[double][coordinates.x] = { ...boardCopy[double][coordinates.x], double: true };
+            boardCopy[coordinates.y[0] + double][coordinates.x] = { ...boardCopy[coordinates.y[0] + double][coordinates.x], double: true };
           }
         }
 

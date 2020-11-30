@@ -32,11 +32,12 @@ export default {
         },
         {
           word: 4,
-          text: "astral",
+          text: "asetral",
           y: "1-6",
           x: "5",
           vertical: true,
           tip: { x: 4, y: 1, value: "De baixo (?): Triste" },
+          doubles: [2]
         },
         {
           word: 5,

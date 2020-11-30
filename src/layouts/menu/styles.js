@@ -6,26 +6,28 @@ export const Container = styled.div`
   width: 100%;
   height: 100%;
 
-  background-image: url("/assets/background.png");
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  gap: 20px;
+  padding: 0 20px;
+
 `;
 
 export const Box = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 420px;
+
+  margin-top: 20px;
+  margin-bottom: 20px;
 
   div.header {
     user-select: none;
     background-color: #213c55;
     padding: 10px;
-
-    gap: 20px;
 
     border-radius: 20px 20px 0 0;
     color: white;
@@ -88,10 +90,8 @@ export const LogoContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 150px;
+  height: 200px;
   width: 100%;
-  top:70px;
-  position: absolute;
 `;
 
 export const Logo = styled.div`

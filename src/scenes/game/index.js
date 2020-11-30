@@ -145,6 +145,7 @@ function Game() {
             />
           )}
         </div>
+        
         <div className="tip-box">
           { board && (
             <>
