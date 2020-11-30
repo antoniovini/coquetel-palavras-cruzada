@@ -7,7 +7,6 @@ function Board({ game, onSelect, onUpdate, selectedWord }) {
   const [focus, setFocus] = useState({});
 
   const updateValue = (evt, x, y, z) => {
-    alert(evt.key);
     if(evt.key === 'Backspace'){
       setTimeout(() => {
         const back = backCell(game, x, y, z, selectedWord);
@@ -85,6 +84,7 @@ function Board({ game, onSelect, onUpdate, selectedWord }) {
                 )) : (
                     <>
                       {cell.arrow && (
+                        
                         <S.Arrow 
                           x={cell.arrow.x} 
                           y={cell.arrow.y} 

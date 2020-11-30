@@ -16,7 +16,7 @@ function Create() {
         x: "1-14",
         horizontal: true,
         tip: { x: 1, y: 1, value: "Automóvel usado na fórmula 1." },
-        arrow: { icon: "top-to-right", pos: {x: '6px', y: '0'} },
+        arrow: { icon: "top-to-right", pos: { x: "6px", y: "0" } },
       },
       {
         word: 2,
@@ -25,9 +25,8 @@ function Create() {
         x: "5-6",
         horizontal: true,
         tip: { x: 4, y: 3, value: "Eu e eles." },
-        arrow: { icon: "to-right", pos: {x: '6px', y: '0'} },
-        doubles:[2]
-        
+        arrow: { icon: "to-right", pos: { y: "45%", x: "5%" }, size: 10 },
+        doubles: [6],
       },
       {
         word: 3,
@@ -36,7 +35,7 @@ function Create() {
         x: "8",
         horizontal: true,
         tip: { x: 7, y: 3, value: "Quinta vogal" },
-        arrow: { icon: "to-right", pos: {x: '6px', y: '0'} },
+        arrow: { icon: "to-right", pos: { y: "45%", x: "5%" }, size: 10 },
       },
       {
         word: 4,
@@ -45,7 +44,7 @@ function Create() {
         x: "10-13",
         horizontal: true,
         tip: { x: 9, y: 3, value: "Arma indígena." },
-        arrow: { icon: "to-right", pos: {x: '6px', y: '0'} },
+        arrow: { icon: "to-right", pos: { y: "45%", x: "5%" }, size: 10 },
       },
       {
         word: 5,
@@ -54,7 +53,7 @@ function Create() {
         x: "1-10",
         horizontal: true,
         tip: { x: 1, y: 3, value: "Aparelho que ergue grandes pesos (pl.)." },
-        arrow: { icon: "top-to-right", pos: {x: '6px', y: '0'} },
+        arrow: { icon: "top-to-right", pos: { x: "6px", y: "0" } },
       },
       {
         word: 6,
@@ -63,7 +62,7 @@ function Create() {
         x: "2-3",
         horizontal: true,
         tip: { x: 1, y: 5, value: "Na moda (gíria)." },
-        arrow: { icon: "to-right", pos: {x: '6px', y: '0'} },
+        arrow: { icon: "to-right", pos: { y: "45%", x: "5%" }, size: 10 },
       },
       {
         word: 7,
@@ -72,7 +71,7 @@ function Create() {
         x: "7-9",
         horizontal: true,
         tip: { x: 6, y: 5, value: "Ar, em inglês." },
-        arrow: { icon: "to-right", pos: {x: '6px', y: '0'} },
+        arrow: { icon: "to-right", pos: { y: "45%", x: "5%" }, size: 10 },
       },
       {
         word: 8,
@@ -81,7 +80,7 @@ function Create() {
         x: "11-14",
         horizontal: true,
         tip: { x: 10, y: 5, value: "Cristais de banho." },
-        arrow: { icon: "to-right", pos: {x: '6px', y: '0'} },
+        arrow: { icon: "to-right", pos: { y: "45%", x: "5%" }, size: 10 },
       },
       {
         word: 9,
@@ -89,8 +88,8 @@ function Create() {
         y: "6",
         x: "2-14",
         horizontal: true,
-        tip: { x:1 , y: 6, value: "Parceiro de Luciano (MPB)" },
-        arrow: { icon: "to-right", pos: {x: '6px', y: '0'} },
+        tip: { x: 1, y: 6, value: "Parceiro de Luciano (MPB)" },
+        arrow: { icon: "to-right", pos: { y: "45%", x: "5%" }, size: 10 },
       },
       {
         word: 10,
@@ -99,7 +98,7 @@ function Create() {
         x: "1-5",
         horizontal: true,
         tip: { x: 1, y: 6, value: "Antecedem os trovões." },
-        arrow: { icon: "top-to-right", pos: {x: '6px', y: '0'} },
+        arrow: { icon: "top-to-right", pos: { x: "6px", y: "0" } },
       },
       {
         word: 11,
@@ -107,12 +106,8 @@ function Create() {
         y: "7",
         x: "10-12",
         horizontal: true,
-        tip: {
-          x: 9,
-          y: 7,
-          value: "Inscrição no banheiro feminino.",
-          arrow: { icon: "to-right", pos: {x: '6px', y: '0'} },
-        },
+        tip: { x: 9, y: 7, value: "Inscrição no banheiro feminino." },
+        arrow: { icon: "to-right", pos: { y: "45%", x: "5%" }, size: 10 },
       },
       {
         word: 12,
@@ -121,7 +116,7 @@ function Create() {
         x: "2-3",
         horizontal: true,
         tip: { x: 1, y: 8, value: "Doutor (abrev.)." },
-        arrow: { icon: "to-right", pos: {x: '6px', y: '0'} },
+        arrow: { icon: "to-right", pos: { y: "45%", x: "5%" }, size: 10 },
       },
       {
         word: 13,
@@ -130,7 +125,7 @@ function Create() {
         x: "6-10",
         horizontal: true,
         tip: { x: 5, y: 8, value: "Livro com coleção de mapas." },
-        arrow: { icon: "to-right", pos: {x: '6px', y: '0'} },
+        arrow: { icon: "to-right", pos: { y: "45%", x: "5%" }, size: 10 },
       },
       {
         word: 14,
@@ -139,7 +134,7 @@ function Create() {
         x: "12-14",
         horizontal: true,
         tip: { x: 11, y: 8, value: "Scooby - (?), cão de desenho animado." },
-        arrow: { icon: "to-right", pos: {x: '6px', y: '0'} },
+        arrow: { icon: "to-right", pos: { y: "45%", x: "5%" }, size: 10 },
       },
       {
         word: 15,
@@ -148,8 +143,8 @@ function Create() {
         x: "1-8",
         horizontal: true,
         tip: { x: 1, y: 8, value: "Notícias agradáveis." },
-        arrow: { icon: "top-to-right", pos: {x: '6px', y: '0'} },
-        doubles:[8]
+        arrow: { icon: "top-to-right", pos: { x: "6px", y: "0" } },
+        doubles: [8],
       },
       {
         word: 16,
@@ -158,7 +153,7 @@ function Create() {
         x: "10-14",
         horizontal: true,
         tip: { x: 9, y: 9, value: "Dar desconto (no preço)." },
-        arrow: { icon: "top-to-right", pos: {x: '6px', y: '0'} },
+        arrow: { icon: "to-right", pos: { y: "45%", x: "5%" }, size: 10 },
       },
       {
         word: 17,
@@ -167,8 +162,7 @@ function Create() {
         x: "2",
         vertical: true,
         tip: { x: 2, y: 1, value: "Prudente." },
-        arrow: { icon: "top-to-right", pos: {x: '6px', y: '0'} },
-        
+        arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
       },
       {
         word: 18,
@@ -177,8 +171,8 @@ function Create() {
         x: "3",
         vertical: true,
         tip: { x: 2, y: 1, value: "Local onde se colocam plantas." },
-        arrow: { icon: "top-to-right", pos: {x: '6px', y: '0'} },
-        doubles:[1]
+        arrow: { icon: "left-to-bottom", pos: { x: "-2%", y: "8%" } },
+        doubles: [1],
       },
       {
         word: 19,
@@ -187,7 +181,7 @@ function Create() {
         x: "4",
         vertical: true,
         tip: { x: 4, y: 1, value: "Rua (abrev.)." },
-        arrow: { icon: "top-to-right", pos: {x: '6px', y: '0'} },
+        arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
       },
       {
         word: 20,
@@ -195,8 +189,8 @@ function Create() {
         y: "4",
         x: "4",
         vertical: true,
-        tip: { x:4 , y: 3, value: "Ene." },
-        arrow: { icon: "top-to-right", pos: {x: '6px', y: '0'} },
+        tip: { x: 4, y: 3, value: "Ene." },
+        arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
       },
       {
         word: 21,
@@ -205,7 +199,7 @@ function Create() {
         x: "4",
         vertical: true,
         tip: { x: 4, y: 5, value: "Sílabas de zona." },
-        arrow: { icon: "top-to-right", pos: {x: '6px', y: '0'} },
+        arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
       },
       {
         word: 22,
@@ -214,7 +208,7 @@ function Create() {
         x: "4",
         vertical: true,
         tip: { x: 4, y: 8, value: "Formato de estada sinuosa." },
-        arrow: { icon: "top-to-right", pos: {x: '6px', y: '0'} },
+        arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
       },
       {
         word: 23,
@@ -223,7 +217,7 @@ function Create() {
         x: "5",
         vertical: true,
         tip: { x: 4, y: 1, value: "Capital da inglaterra." },
-        arrow: { icon: "top-to-right", pos: {x: '6px', y: '0'} },
+        arrow: { icon: "left-to-bottom", pos: { x: "-2%", y: "8%" } },
       },
       {
         word: 24,
@@ -231,9 +225,9 @@ function Create() {
         y: "1-4",
         x: "6",
         vertical: true,
-        tip: { x:7, y: 1, value: "A mulher da terceira idade." },
-        arrow: { icon: "top-to-right", pos: {x: '6px', y: '0'} },
-        doubles: [3]
+        tip: { x: 7, y: 1, value: "A mulher da terceira idade." },
+        arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
+        doubles: [3],
       },
       {
         word: 25,
@@ -241,8 +235,8 @@ function Create() {
         y: "8-9",
         x: "6",
         vertical: true,
-        tip: { x:6 , y: 7, value: "Vogais de 'gato'." },
-        arrow: { icon: "top-to-right", pos: {x: '6px', y: '0'} },
+        tip: { x: 6, y: 7, value: "Vogais de 'gato'." },
+        arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
       },
       {
         word: 26,
@@ -250,8 +244,8 @@ function Create() {
         y: "4-6",
         x: "7",
         vertical: true,
-        tip: { x: 7,  y: 3, value: "Afasta-se." },
-        arrow: { icon: "top-to-right", pos: {x: '6px', y: '0'} },
+        tip: { x: 7, y: 3, value: "Afasta-se." },
+        arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
       },
       {
         word: 27,
@@ -259,12 +253,8 @@ function Create() {
         y: "8-9",
         x: "7",
         vertical: true,
-        tip: {
-          x: 7,
-          y: 7,
-          value: "Televisão (abrev.).",
-        },
-        arrow: { icon: "top-to-right", pos: {x: '6px', y: '0'} },
+        tip: { x: 7, y: 7, value: "Televisão (abrev.)." },
+        arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
       },
       {
         word: 28,
@@ -273,8 +263,8 @@ function Create() {
         x: "8",
         vertical: true,
         tip: { x: 8, y: 1, value: "Peles removidas pela manicure." },
-        arrow: { icon: "top-to-right", pos: {x: '6px', y: '0'} },
-        doubles:[9]
+        arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
+        doubles: [9],
       },
       {
         word: 29,
@@ -283,7 +273,7 @@ function Create() {
         x: "9",
         vertical: true,
         tip: { x: 9, y: 3, value: "Época período." },
-        arrow: { icon: "top-to-right", pos: {x: '6px', y: '0'} },
+        arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
       },
       {
         word: 30,
@@ -292,7 +282,7 @@ function Create() {
         x: "10",
         vertical: true,
         tip: { x: 9, y: 1, value: "Fruta de polpa branca (pl.)." },
-        arrow: { icon: "top-to-right", pos: {x: '6px', y: '0'} },
+        arrow: { icon: "left-to-bottom", pos: { x: "-2%", y: "8%" } },
       },
       {
         word: 31,
@@ -300,8 +290,8 @@ function Create() {
         y: "6-9",
         x: "10",
         vertical: true,
-        tip: { x: 10, y:5 , value: "Móvel de escritório." },
-        arrow: { icon: "top-to-right", pos: {x: '6px', y: '0'} },
+        tip: { x: 10, y: 5, value: "Móvel de escritório." },
+        arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
       },
       {
         word: 32,
@@ -310,7 +300,7 @@ function Create() {
         x: "11",
         vertical: true,
         tip: { x: 11, y: 4, value: "Tempero iodado." },
-        arrow: { icon: "top-to-right", pos: {x: '6px', y: '0'} },
+        arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
       },
       {
         word: 33,
@@ -319,7 +309,7 @@ function Create() {
         x: "12",
         vertical: true,
         tip: { x: 11, y: 1, value: "Grande número de animais." },
-        arrow: { icon: "top-to-right", pos: {x: '6px', y: '0'} },
+        arrow: { icon: "left-to-bottom", pos: { x: "-2%", y: "8%" } },
       },
       {
         word: 34,
@@ -328,7 +318,7 @@ function Create() {
         x: "13",
         vertical: true,
         tip: { x: 14, y: 1, value: "Tempo passado." },
-        arrow: { icon: "top-to-right", pos: {x: '6px', y: '0'} },
+        arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
       },
       {
         word: 35,
@@ -337,7 +327,7 @@ function Create() {
         x: "13",
         vertical: true,
         tip: { x: 13, y: 4, value: "Igrid Guimarães atriz." },
-        arrow: { icon: "top-to-right", pos: {x: '6px', y: '0'} },
+        arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
       },
       {
         word: 36,
@@ -346,8 +336,8 @@ function Create() {
         x: "13",
         vertical: true,
         tip: { x: 13, y: 7, value: "Sufixo de 'filhote'." },
-        arrow: { icon: "top-to-right", pos: {x: '6px', y: '0'} },
-        doubles:[2]
+        arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
+        doubles: [9],
       },
       {
         word: 37,
@@ -356,9 +346,9 @@ function Create() {
         x: "14",
         vertical: true,
         tip: { x: 14, y: 3, value: "Utensílio do vendedor de praia." },
-        arrow: { icon: "top-to-right", pos: {x: '6px', y: '0'} },
-      }
-    ]}
+        arrow: { icon: "to-bottom", pos: { x: "45%", y: "5%" } ,size:7.5 },
+      },
+    ], }
     
 
   useEffect(() => {
@@ -410,7 +400,8 @@ function Create() {
         if(doubles){
           for(let z = 0; z < doubles.length; z++){
             const double = doubles[z] - 1;
-            boardCopy[coordinates.y][coordinates.x[0] + double] = { ...boardCopy[coordinates.y][coordinates.x[0] + double], double: true };
+
+            boardCopy[coordinates.y][double] = { ...boardCopy[coordinates.y][double], double: true };
           }
         }
 
@@ -425,7 +416,8 @@ function Create() {
         if(doubles){
           for(let z = 0; z < doubles.length; z++){
             const double = doubles[z] - 1;
-            boardCopy[coordinates.y[0] + double][coordinates.x] = { ...boardCopy[coordinates.y[0] + double][coordinates.x], double: true };
+
+            boardCopy[double][coordinates.x] = { ...boardCopy[double][coordinates.x], double: true };
           }
         }
 
@@ -441,8 +433,6 @@ function Create() {
           boardCopy[coordinates.y][coordinates.x] = { doubles: true };
         }
 
-        console.log(boardCopy[coordinates.y])
-
         if(boardCopy[coordinates.y][coordinates.x].word){
           boardCopy[coordinates.y][coordinates.x] = { ...boardCopy[coordinates.y][coordinates.x], word: [...boardCopy[coordinates.y][coordinates.x].word, word.word]};
         }else{
@@ -452,11 +442,12 @@ function Create() {
 
       // fill arrows
       const { arrow } = word;
+
       if(arrow){
         const x = Array.isArray(coordinates.x) ? coordinates.x[0] : coordinates.x;
         const y = Array.isArray(coordinates.y) ? coordinates.y[0] : coordinates.y;
 
-        boardCopy[y][x] = {...boardCopy[y][x], arrow: { icon: arrow.icon, x: arrow.pos.x, y: arrow.pos.y }}
+        boardCopy[y][x] = {...boardCopy[y][x], arrow: { icon: arrow.icon, x: arrow.pos.x, y: arrow.pos.y , size: arrow.size}}
       }
 
     }
