@@ -8,6 +8,7 @@ import DifficultyMenu from "../scenes/difficulty";
 import Game from "../scenes/game";
 import Tutorial from "../scenes/tutorial";
 import Create from "../scenes/create";
+import Themes from "../scenes/chooseThemes";
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
       <GlobalStyle />
       <Router>
         <Switch>
+          <Route path="/themes">
+            <Themes />
+          </Route>
           <Route path="/tutorial">
             <Tutorial />
           </Route>
