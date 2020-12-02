@@ -1,5 +1,5 @@
 {
-  "br": {
+  "pt-br": {
     "firstScreen": {
       "title": "Palavras Cruzadas",
       "firstButton": "Novo Jogo",
@@ -24,7 +24,7 @@
     }
   },
 
-  "us": {
+  "en-us": {
     "firstScreen": {
       "title": "Cross Words",
       "firstButton": "New Game",
