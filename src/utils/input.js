@@ -30,7 +30,8 @@ export const normalizeInputEvent = function(event) {
     originalEvent: event
   };
 
-  console.log(event instanceof KeyboardEvent);
+  console.log(event);
+
 
   if (event instanceof KeyboardEvent) {
     if (event.key === 'Backspace') {

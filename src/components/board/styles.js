@@ -82,6 +82,7 @@ export const Cell = styled.div`
     outline: none;
 
     border: 1px solid #213b55;
+    text-transform: uppercase;
 
     text-align: center;
 

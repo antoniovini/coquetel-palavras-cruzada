@@ -95,7 +95,7 @@ function Game() {
 
   const onCheck = () => {
     const typedWord = getWordFromBoard(board.data, selectedWord);
-    setBoard(checkWord(board, selectedWord, typedWord));
+    setBoard(checkWord(board, selectedWord, typedWord.toLowerCase()));
     if (selectedWord < board.words.length) {
       setSelectedWord((word) => word + 1);
     } else {
