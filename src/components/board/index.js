@@ -13,12 +13,6 @@ function Board({ game, onSelect, onUpdate, selectedWord }) {
   }
 
   const updateValue = (evt, x, y, z) => {
-    // const currentCode = evt.which || evt.code;
-    // let currentKey = evt.key;
-    // if (!currentKey) {
-    //   currentKey = String.fromCharCode(currentCode);
-    // }
-
     const getKeyCode = function(str){
       return str.charCodeAt(str.length);
     }
@@ -210,11 +204,11 @@ function Board({ game, onSelect, onUpdate, selectedWord }) {
                           id={`input_${columnIndex}_${rowIndex}`}
                           className="single-input" 
                           maxLength="1" 
-                          onKeyDown={(evt) => {
-                            if(!cell.correct){
-                              updateValue(evt, columnIndex, rowIndex)
-                            }
-                          }}
+                          // onKeyDown={(evt) => {
+                          //   if(!cell.correct){
+                          //     updateValue(evt, columnIndex, rowIndex)
+                          //   }
+                          // }}
                           // onChange={(evt) => fillValue(evt, columnIndex, rowIndex)}
                           value={game.data[rowIndex][columnIndex].value || ''}
                           ref={ref => {
