@@ -8,9 +8,14 @@ import DefaultLayout from "../../layouts/default";
 import { MdPause, MdPlayArrow } from "react-icons/md";
 
 import * as S from "./styles";
-import { checkWord, fillLetter, fillWord, getWordFromBoard } from "../../utils/board";
+import {
+  checkWord,
+  fillLetter,
+  fillWord,
+  getWordFromBoard,
+} from "../../utils/board";
 
-import games from '../../games';
+import games from "../../games";
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -18,8 +23,12 @@ function useQuery() {
 
 function Game() {
   const query = useQuery();
-  
-  const [board, setBoard] = useState(games[query.get('mode')][Math.floor(Math.random() * games[query.get('mode')].length)]);
+
+  const [board, setBoard] = useState(
+    games[query.get("mode")][
+      Math.floor(Math.random() * games[query.get("mode")].length)
+    ]
+  );
   const [selectedWord, setSelectedWord] = useState(1);
 
   //Timer
@@ -65,38 +74,38 @@ function Game() {
 
   const onUpdate = (board) => {
     setBoard(board);
-  }
+  };
 
   const onCorrect = () => {
     setBoard(fillWord(board, selectedWord));
-    if(selectedWord < board.words.length){
-      setSelectedWord(word => word + 1);
-    }else{
+    if (selectedWord < board.words.length) {
+      setSelectedWord((word) => word + 1);
+    } else {
       setSelectedWord(1);
     }
-  }
+  };
 
   const onSolution = () => {
     const words = board.words;
     words.map((word) => {
-      const copy = {...fillWord(board, word.word)};
+      const copy = { ...fillWord(board, word.word) };
       setBoard(copy);
     });
-  }
+  };
 
   const onCheck = () => {
     const typedWord = getWordFromBoard(board.data, selectedWord);
     setBoard(checkWord(board, selectedWord, typedWord));
-    if(selectedWord < board.words.length){
-      setSelectedWord(word => word + 1);
-    }else{
+    if (selectedWord < board.words.length) {
+      setSelectedWord((word) => word + 1);
+    } else {
       setSelectedWord(1);
     }
-  }
+  };
 
   const onTip = () => {
     setBoard(fillLetter(board, selectedWord));
-  }
+  };
 
   return (
     <S.Container>
@@ -110,25 +119,17 @@ function Game() {
                 className="startstop"
               />
             ) : (
-                <MdPlayArrow
-                  size={30}
-                  onClick={() => start()}
-                  className="startstop"
-                />
-              )}
+              <MdPlayArrow
+                size={30}
+                onClick={() => start()}
+                className="startstop"
+              />
+            )}
           </Timer>
-          <Button
-            onClick={onCorrect}
-          >Corrigir</Button>
-          <Button
-            onClick={onCheck}
-          >Checar</Button>
-          <Button
-            onClick={onTip}
-          >Dica</Button>
-          <Button
-            onClick={onSolution}
-          >Solução</Button>
+          <Button onClick={onCorrect}>Corrigir</Button>
+          <Button onClick={onCheck}>Checar</Button>
+          <Button onClick={onTip}>Dica</Button>
+          <Button onClick={onSolution}>Solução</Button>
           <Button flat>
             <Link to="/difficulty">
               <img src={"/assets/icons/back.png"} height={"20px"} />
@@ -136,7 +137,7 @@ function Game() {
           </Button>
         </div>
         <div className="board-box">
-          {  board && (
+          {board && (
             <Board
               game={board}
               onSelect={(word) => setSelectedWord(word)}
@@ -145,9 +146,9 @@ function Game() {
             />
           )}
         </div>
-        
+
         <div className="tip-box">
-          { board && (
+          {board && (
             <>
               <Button
                 flat
@@ -164,7 +165,8 @@ function Game() {
               </Button>
               <h2>
                 {`${selectedWord}. ` +
-                  board.words.filter((word) => word.word === selectedWord)[0].tip.value}
+                  board.words.filter((word) => word.word === selectedWord)[0]
+                    .tip.value}
               </h2>
               <Button
                 flat
@@ -173,7 +175,7 @@ function Game() {
                   if (selectedWord === board.words.length) {
                     setSelectedWord(1);
                   } else {
-                    setSelectedWord(selectedWord + 1)
+                    setSelectedWord(selectedWord + 1);
                   }
                 }}
               >

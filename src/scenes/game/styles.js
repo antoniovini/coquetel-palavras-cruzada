@@ -55,11 +55,12 @@ export const Box = styled.div`
     background-color: white;
     overflow: auto;
 
-    @media(min-width: 800px){
+    @media(min-width: 800px) {
       display: flex;
       justify-content: center;
       align-items: center;
     }
+
   }
 
   .tip-box{
