@@ -4,14 +4,13 @@ import coquetel from "../../assets/coquetel.png";
 
 export const Container = styled.div`
   width: 100%;
-  height: 100%;
-
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  padding: 0 20px;
+  padding: 20px;
 
 `;
 
@@ -92,6 +91,8 @@ export const LogoContainer = styled.div`
   align-items: center;
   height: 200px;
   width: 100%;
+
+  padding: 0 20px;
 `;
 
 export const Logo = styled.div`

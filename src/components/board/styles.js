@@ -94,7 +94,7 @@ export const Cell = styled.div`
 
     transition: border 0.2s;
 
-    font-size: 1.4;
+    font-size: 1.4em;
   }
 
   input:focus {

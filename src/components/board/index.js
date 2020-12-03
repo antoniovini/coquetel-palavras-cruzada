@@ -6,24 +6,71 @@ import * as S from './styles';
 function Board({ game, onSelect, onUpdate, selectedWord }) {
   const [focus, setFocus] = useState({});
 
+  const onChange = (evt, x, y, z) => {
+    if(evt.target.value.length === 1) {
+      onUpdate(fillCell(game, evt.target.value, x, y, z));
+    }
+  }
+
   const updateValue = (evt, x, y, z) => {
-    if(evt.key === 'Backspace'){
-      setTimeout(() => {
-        const back = backCell(game, x, y, z, selectedWord);
-        onUpdate(fillCell(game, "", x, y, z));
-        if(back){
-          setFocus(back);
-        }
-      }, 200);
-    }else{
-      if(evt.key.length <= 1){
-        onUpdate(fillCell(game, evt.key, x, y, z));
-        const next = nextCell(game, x, y, z, selectedWord);
-        if(next){
-          setFocus(next);
+    // const currentCode = evt.which || evt.code;
+    // let currentKey = evt.key;
+    // if (!currentKey) {
+    //   currentKey = String.fromCharCode(currentCode);
+    // }
+
+    const getKeyCode = function(str){
+      return str.charCodeAt(str.length);
+    }
+
+    let charKeyCode = evt.keyCode || evt.which;
+    
+    setTimeout(function(){
+      //for android chrome keycode fix
+      if(charKeyCode == 0 || charKeyCode == 229){
+        if(Number.isInteger(z)){
+          if(z === 0){
+            const input = document.getElementById(`input_${x}_${y}_1`);
+            const { value } = input;
+            
+            charKeyCode = getKeyCode(value);
+          }else{
+            const input = document.getElementById(`input_${x}_${y}_2`);
+            const { value } = input;
+            
+            charKeyCode = getKeyCode(value);
+          }
+        }else{
+          const input = document.getElementById(`input_${x}_${y}`);
+          const { value } = input;
+          charKeyCode = getKeyCode(value);
         }
       }
-    }
+
+      const key = String.fromCharCode(charKeyCode);
+
+      if(charKeyCode === 8 || key === " "){
+        setTimeout(() => {
+          const back = backCell(game, x, y, z, selectedWord);
+          onUpdate(fillCell(game, "", x, y, z));
+          setTimeout(() => {
+            if(back){
+              setFocus(back);
+            }
+          }, 200);
+        }, 200);
+      }else{
+        if(key.length <= 1){
+          // onUpdate(fillCell(game, key, x, y, z));
+          const next = nextCell(game, x, y, z, selectedWord);
+          setTimeout(() => {
+            if(next){
+              setFocus(next);
+            }
+          }, 200);
+        }
+      }
+    }, 200);
   }
 
   const select = (word) => {
@@ -34,6 +81,8 @@ function Board({ game, onSelect, onUpdate, selectedWord }) {
   useEffect(() => {
     setFocus(selectedCordinates(game.data, selectedWord));
   }, [selectedWord])
+
+  useEffect(() => {alert(JSON.stringify(focus))}, [focus])
 
   return (
     <S.Container
@@ -102,23 +151,25 @@ function Board({ game, onSelect, onUpdate, selectedWord }) {
                           </svg>
                           <div className="top">
                             <input 
+                              onChange={(evt) => onChange(evt, columnIndex, rowIndex, 0)}
+                              id={`input_${columnIndex}_${rowIndex}_1`}
                               maxLength="1"
                               value={game.data[rowIndex][columnIndex].value ? game.data[rowIndex][columnIndex].value[0] || '' : ''}
-                              ref={ref => {
-                                if(!focus){
-                                  return
-                                }
+                              // ref={ref => {
+                              //   if(!focus){
+                              //     return
+                              //   }
     
-                                if(focus.x === columnIndex  && focus.y === rowIndex && focus.z === 0 && ref) {
-                                  ref.focus();
-                                }
-                              }}
+                              //   if(focus.x === columnIndex  && focus.y === rowIndex && focus.z === 0 && ref) {
+                              //     ref.focus();
+                              //   }
+                              // }}
                               onKeyDown={(evt) => {
                                 if(!cell.correct){
                                   updateValue(evt, columnIndex, rowIndex, 0);
                                 }
                               }}
-                              value={game.data[rowIndex][columnIndex].value ? game.data[rowIndex][columnIndex].value[0] || '' : ''}
+                              // value={game.data[rowIndex][columnIndex].value ? game.data[rowIndex][columnIndex].value[0] || '' : ''}
                               ref={ref => {
                                 if(!focus){
                                   return
@@ -131,7 +182,9 @@ function Board({ game, onSelect, onUpdate, selectedWord }) {
                             />
                           </div>
                           <div className="bottom">
-                            <input 
+                            <input
+                              onChange={(evt) => onChange(evt, columnIndex, rowIndex, 1)}
+                              id={`input_${columnIndex}_${rowIndex}_2`}
                               maxLength="1"
                               onKeyDown={(evt) => {
                                 if(!cell.correct){
@@ -153,6 +206,8 @@ function Board({ game, onSelect, onUpdate, selectedWord }) {
                         </S.Double>
                       ) : (
                         <input
+                          onChange={(evt) => onChange(evt, columnIndex, rowIndex)}
+                          id={`input_${columnIndex}_${rowIndex}`}
                           className="single-input" 
                           maxLength="1" 
                           onKeyDown={(evt) => {
