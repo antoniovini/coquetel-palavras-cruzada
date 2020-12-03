@@ -33,12 +33,13 @@ export const Box = styled.div`
     gap: 20px;
     background-color: #213B55;
 
-    border-radius: 20px 20px 0 0;
-
     display: flex;
 
     overflow: auto;
 
+    @media(min-width: 800px){
+      border-radius: 20px 20px 0 0;
+    }
 
     .startstop{
       cursor: pointer;
@@ -70,7 +71,9 @@ export const Box = styled.div`
     width: 100%;
     background-color: #EBC947;
 
-    border-radius: 0 0 20px 20px;
+    @media(min-width: 800px){
+      border-radius: 0 0 20px 20px;
+    }
 
     transition: height .2s;
 
