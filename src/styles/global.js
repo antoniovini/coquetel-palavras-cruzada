@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
- 
+
+import background from "../assets/background.png";
+
 const GlobalStyle = createGlobalStyle`
   *{
     padding: 0;
@@ -12,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
   html, body, #root{
     width: 100%;
     height: 100%;
-    background-image: url("/assets/background.png");
+    background-image: url(${background});
     background-position: center;
     background-size: cover;
   }

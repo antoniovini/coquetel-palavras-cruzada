@@ -6,14 +6,20 @@ import {
   backCell,
 } from "../../utils/board";
 
+import bottomtoright from "../../assets/arrows/bottom-to-right.png";
+import lefttobottom from "../../assets/arrows/left-to-bottom.png";
+import righttobottom from "../../assets/arrows/right-to-bottom.png";
+import tobottom from "../../assets/arrows/to-bottom.png";
+import toright from "../../assets/arrows/to-right.png";
+import toptoright from "../../assets/arrows/top-to-right.png";
+
 import * as S from "./styles";
 
 function Board({ game, onSelect, onUpdate, selectedWord }) {
   const [focus, setFocus] = useState({});
 
   const updateValue = (evt, x, y, z) => {
-
-    if(evt.nativeEvent instanceof KeyboardEvent){
+    if (evt.nativeEvent instanceof KeyboardEvent) {
       if (evt.nativeEvent.key === "Backspace") {
         const back = backCell(game, x, y, z, selectedWord);
         onUpdate(fillCell(game, "", x, y, z));
@@ -21,10 +27,10 @@ function Board({ game, onSelect, onUpdate, selectedWord }) {
           if (back) {
             setFocus(back);
           }
-        }, 200)
+        }, 200);
       }
-    }else{
-      if(evt.nativeEvent.inputType === "deleteContentBackward"){
+    } else {
+      if (evt.nativeEvent.inputType === "deleteContentBackward") {
         const back = backCell(game, x, y, z, selectedWord);
         onUpdate(fillCell(game, "", x, y, z));
         if (back) {
@@ -34,7 +40,7 @@ function Board({ game, onSelect, onUpdate, selectedWord }) {
         return;
       }
 
-      if(!evt.nativeEvent.data){
+      if (!evt.nativeEvent.data) {
         return;
       }
 
@@ -64,11 +70,19 @@ function Board({ game, onSelect, onUpdate, selectedWord }) {
       {game.data.map((row, rowIndex) => (
         <S.Row key={rowIndex}>
           {row.map((cell, columnIndex) => {
-
-            if(!cell.tips && !cell.word){
-              console.log('aqui');
+            if (!cell.tips && !cell.word) {
             }
-
+            function setIcon(type) {
+              const icons = {
+                "to-bottom": tobottom,
+                "to-right": toright,
+                "left-to-bottom": lefttobottom,
+                "right-to-botoom": righttobottom,
+                "bottom-to-right": bottomtoright,
+                "top-to-right": toptoright,
+              };
+              return icons[type];
+            }
             return (
               <S.Cell
                 key={columnIndex}
@@ -123,7 +137,7 @@ function Board({ game, onSelect, onUpdate, selectedWord }) {
                         x={cell.arrow.x}
                         y={cell.arrow.y}
                         size={cell.arrow.size}
-                        src={`/assets/arrows/${cell.arrow.icon}.png`}
+                        src={setIcon(cell.arrow.icon)}
                       />
                     )}
                     {cell.double ? (

@@ -17,8 +17,14 @@ import {
 
 import games from "../../games";
 
-import languages from '../../languages.json';
-import config from '../../config.json';
+import languages from "../../languages.json";
+import config from "../../config.json";
+
+import back from "../../assets/icons/back.png";
+
+import left from "../../assets/left-arrow.png";
+
+import right from "../../assets/right-arrow.png";
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -129,13 +135,21 @@ function Game() {
               />
             )}
           </Timer>
-          <Button onClick={onCorrect}>{languages[config.game.lang]['gameScreen'].firstButton}</Button>
-          <Button onClick={onCheck}>{languages[config.game.lang]['gameScreen'].secondButton}</Button>
-          <Button onClick={onTip}>{languages[config.game.lang]['gameScreen'].thirdButton}</Button>
-          <Button onClick={onSolution}>{languages[config.game.lang]['gameScreen'].fourthButton}</Button>
+          <Button onClick={onCorrect}>
+            {languages[config.game.lang]["gameScreen"].firstButton}
+          </Button>
+          <Button onClick={onCheck}>
+            {languages[config.game.lang]["gameScreen"].secondButton}
+          </Button>
+          <Button onClick={onTip}>
+            {languages[config.game.lang]["gameScreen"].thirdButton}
+          </Button>
+          <Button onClick={onSolution}>
+            {languages[config.game.lang]["gameScreen"].fourthButton}
+          </Button>
           <Button flat>
             <Link to="/themes">
-              <img src={"/assets/icons/back.png"} height={"20px"} />
+              <img src={back} height={"20px"} />
             </Link>
           </Button>
         </div>
@@ -164,7 +178,7 @@ function Game() {
                   }
                 }}
               >
-                <img src="/assets/left-arrow.png" height={60} />
+                <img src={left} height={60} />
               </Button>
               <h2>
                 {`${selectedWord}. ` +
@@ -182,7 +196,7 @@ function Game() {
                   }
                 }}
               >
-                <img src="/assets/right-arrow.png" height={60} />
+                <img src={right} height={60} />
               </Button>
             </>
           )}

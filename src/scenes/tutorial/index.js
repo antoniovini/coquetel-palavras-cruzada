@@ -8,31 +8,37 @@ import DefaultLayout from "../../layouts/default";
 
 import * as S from "./style";
 
-import languages from '../../languages.json';
-import config from '../../config.json';
+import languages from "../../languages.json";
+import config from "../../config.json";
+
+import video from "../../assets/tutorial.mp4";
+
+import back from "../../assets/icons/back.png";
+
+import logo from "../../assets/game-logo.png";
 
 function Tutorial() {
   return (
     <S.Container>
       <S.Box>
         <div className="header">
-          <img className="logo" src={"/assets/game-logo.png"} />
-          <h1>{languages[config.game.lang]['instructionScreen'].title}</h1>
+          <img className="logo" src={logo} />
+          <h1>{languages[config.game.lang]["instructionScreen"].title}</h1>
 
           <Button flat>
             <Link to={"/"}>
-              <img src={"/assets/icons/back.png"} height={"20px"} />
+              <img src={back} height={"20px"} />
             </Link>
           </Button>
         </div>
         <div className="options">
-          <ReactPlayer 
-            url='/assets/tutorial.mp4'
-            width= "100%"
+          <ReactPlayer
+            url={video}
+            width="100%"
+            height="100%"
             controls={false}
             playing={true}
             className="player"
-          
           />
         </div>
       </S.Box>

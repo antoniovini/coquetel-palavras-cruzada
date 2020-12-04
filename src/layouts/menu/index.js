@@ -2,6 +2,10 @@ import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import Button from "../../components/button";
 
+import logo from "../../assets/game-logo.png"
+
+import back from "../../assets/icons/back.png"
+
 import * as S from "./styles";
 
 function MenuLayout(title = "", options = [], backTo) {
@@ -13,12 +17,12 @@ function MenuLayout(title = "", options = [], backTo) {
         </S.LogoContainer>
         <S.Box>
           <div className="header">
-            <img className="logo" src={"/assets/game-logo.png"} />
+            <img className="logo" src={logo} />
             <h1>{title}</h1>
             {backTo && (
               <Button flat>
                 <Link to={backTo}>
-                  <img src={"/assets/icons/back.png"} height={"20px"} />
+                  <img src={back} height={"20px"} />
                 </Link>
               </Button>
             )}

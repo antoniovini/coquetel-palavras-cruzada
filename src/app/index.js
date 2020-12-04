@@ -1,7 +1,7 @@
 import React from "react";
 import GlobalStyle from "../styles/global";
 
-import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import MainMenu from "../scenes/main";
 import DifficultyMenu from "../scenes/difficulty";

@@ -1,5 +1,6 @@
 {
   "name": "game",
+  "homepage": "https://mercadatadigital.com.br/coquetel/themed",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -38,6 +39,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "homepage": "http://mercadatadigital.com.br/coquetel/palavrascruzadas/themed/"
+  }
+  
 }
