@@ -8,7 +8,7 @@ import DifficultyMenu from "../scenes/difficulty";
 import Game from "../scenes/game";
 import Tutorial from "../scenes/tutorial";
 import Create from "../scenes/create";
-import Themes from "../scenes/chooseThemes";
+import Themes from "../scenes/themes";
 
 function App() {
   return (

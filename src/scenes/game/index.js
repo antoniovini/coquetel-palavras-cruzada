@@ -17,6 +17,9 @@ import {
 
 import games from "../../games";
 
+import languages from '../../languages.json';
+import config from '../../config.json';
+
 function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
@@ -126,12 +129,12 @@ function Game() {
               />
             )}
           </Timer>
-          <Button onClick={onCorrect}>Corrigir</Button>
-          <Button onClick={onCheck}>Checar</Button>
-          <Button onClick={onTip}>Dica</Button>
-          <Button onClick={onSolution}>Solução</Button>
+          <Button onClick={onCorrect}>{languages[config.game.lang]['gameScreen'].firstButton}</Button>
+          <Button onClick={onCheck}>{languages[config.game.lang]['gameScreen'].secondButton}</Button>
+          <Button onClick={onTip}>{languages[config.game.lang]['gameScreen'].thirdButton}</Button>
+          <Button onClick={onSolution}>{languages[config.game.lang]['gameScreen'].fourthButton}</Button>
           <Button flat>
-            <Link to="/difficulty">
+            <Link to="/themes">
               <img src={"/assets/icons/back.png"} height={"20px"} />
             </Link>
           </Button>

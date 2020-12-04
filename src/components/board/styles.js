@@ -31,7 +31,7 @@ export const Cell = styled.div`
       background-color: rgba(39, 174, 96, 0.4);
     `};
 
-  ${({ tips, selected, correct, failed }) =>
+  ${({ tips, selected, correct, failed, empty }) =>
     tips
       ? css`
           background-color: #213b55;
@@ -47,6 +47,11 @@ export const Cell = styled.div`
       : failed
       ? css`
           background-color: rgba(192, 57, 43, 0.4);
+        `
+      : empty
+      ? css`
+          pointer-events: none;
+          background-color: #213b55;
         `
       : css`
           background-color: transparent;
@@ -108,6 +113,7 @@ export const Arrow = styled.img`
   max-height: 60%;
   max-width: 60%;
   width: ${({ size }) => size}px;
+
   top: ${({ y }) => y};
   left: ${({ x }) => x};
 `;
@@ -118,7 +124,7 @@ export const Double = styled.div`
 
   position: relative;
 
-  .line-blue{
+  .line-blue {
     position: absolute;
     top: 0;
     left: 0;
@@ -126,13 +132,13 @@ export const Double = styled.div`
     pointer-events: none;
 
     opacity: 1;
-    transition: opacity .2s;
+    transition: opacity 0.2s;
 
     stroke: #213b55;
     stroke-width: 2px;
   }
 
-  .line-yellow{
+  .line-yellow {
     position: absolute;
     top: 0;
     left: 0;
@@ -143,10 +149,10 @@ export const Double = styled.div`
     stroke-width: 4px;
 
     opacity: 0;
-    transition: opacity .2s;
+    transition: opacity 0.2s;
   }
 
-  :focus-within{
+  :focus-within {
     & .line-yellow {
       opacity: 1;
     }

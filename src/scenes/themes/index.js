@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Button from "../../components/button";
 
 import DefaultLayout from "../../layouts/default";
@@ -8,6 +8,8 @@ import DefaultLayout from "../../layouts/default";
 import * as S from "./style";
 
 function Themes() {
+  const history = useHistory();
+
   return (
     <S.Container>
       <S.Box>
@@ -22,27 +24,39 @@ function Themes() {
           </Button>
         </div>
         <div className="options">
-          <div className="circletheme">
+          <div className="circletheme"
+            onClick={() => history.push('/game?mode=easy&theme=80s')}
+          >
             <img alt="themes" src={"/assets/pac.png"} />
             <p>Anos 80</p>
           </div>
-          <div className="circletheme">
+          <div className="circletheme"
+            onClick={() => history.push('/game?mode=easy&theme=tv')}
+          >
             <img alt="themes" src={"/assets/tv.png"} />
             <p>Tv</p>
           </div>
-          <div className="circletheme">
+          <div className="circletheme"
+            onClick={() => history.push('/game?mode=easy&theme=music')}
+          >
             <img alt="themes" src={"/assets/music.png"} />
             <p>Música</p>
           </div>
-          <div className="circletheme">
+          <div className="circletheme"
+            onClick={() => history.push('/game?mode=easy&theme=oscar')}
+          >
             <img alt="themes" src={"/assets/oscar.png"} />
             <p>Óscar</p>
           </div>
-          <div className="circletheme">
+          <div className="circletheme"
+            onClick={() => history.push('/game?mode=easy&theme=90s')}
+          >
             <img alt="themes" src={"/assets/pc.png"} />
             <p>Anos 90</p>
           </div>
-          <div className="circletheme">
+          <div className="circletheme"
+            onClick={() => history.push('/game?mode=easy&theme=football')}
+          >
             <img alt="themes" src={"/assets/football.png"} />
             <p>Futebol</p>
           </div>
